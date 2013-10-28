@@ -236,7 +236,7 @@
                       	<hr>                            
                           <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
-                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"><span class="process text-danger" style="display:none;">Processing&hellip;</span></p>                          
+                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe">&nbsp;&nbsp;&nbsp;&nbsp;<span class="process" style="display:none;">Processing&hellip;</span></p><br><br>                          
                       </div>
                   </div>     
                   <input type="hidden" name="plan" value="<?php echo $_GET['plan'] ?>">

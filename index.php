@@ -61,7 +61,7 @@
 	<div class="row">
     	<div class="col-sm-12 text-center">
 	    	<h3>The comics you love. Unlimited access. One convenient subscription.</h3>
-    		<a class="btn btn-info btn-lg" href="pricing.php">Subscribe now</a><br><br>
+    		<a class="btn btn-info btn-lg" href="pricing.php">Subscribe now</a><br><br><br><br>
     	</div>
     </div>
 </div> 
