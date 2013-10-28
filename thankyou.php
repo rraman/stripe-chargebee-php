@@ -10,7 +10,7 @@
           <div class="clearfix" style="min-height:60px;"> </div>           
           <div class="social">
               <div class="twitter">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="I Just subscribed to @Awesome_Comics. The ultimate comics store!">Tweet</a>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="none" data-text="I Just subscribed to @Awesome_Comics. The ultimate comics store!">Tweet</a>
                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
               </div>
               <div class="facebook">                
