@@ -11,7 +11,10 @@
  <div id="container" class="container">
    	<div class="row">
      	<div class="col-xs-12">
-             <div class="alert alert-danger" style="display:none;"></div>
+             <div class="alert alert-dismissable alert-danger" style="display:none;">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <b></b>
+             </div>
          </div>
      </div>
 <div class="row">		

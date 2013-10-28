@@ -16,6 +16,8 @@
     
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/style.css" rel="stylesheet">
+    
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
     <title>Wondrous Comics</title>
 
   </head>

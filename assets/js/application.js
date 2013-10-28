@@ -11,7 +11,7 @@ function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
         $("#subscribe-form").validate().showErrors({errParam:errMsg});
     }
     var errMsg = jqXHR.responseJSON.error_msg;
-    $(".alert-danger").text(errMsg).show();
+    $(".alert-danger").show().find("b").text(errMsg);
 }
 
 function subscribeResponseHandler(responseJSON) {
