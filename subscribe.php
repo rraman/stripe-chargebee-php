@@ -232,13 +232,13 @@ $(document).ready(function() {
                               <small class="text-danger pull-right">invalid card number</small>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="form-control">
+                                      <select class="card-expiry-month form-control" >
                                           <option>01</option>
                                           <option>02</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="form-control">
+                                      <select class="card-expiry-year form-control">
                                           <option>2015</option>
                                       </select>
                                   </div>
@@ -268,7 +268,8 @@ $(document).ready(function() {
                           <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
                           <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
                       </div>
-                  </div>                   
+                  </div>     
+              <input type="hidden" name="plan_id" value='<?= $_GET['plan_id'] ?>'>
               </form>            
               <br><br>
       </div>
