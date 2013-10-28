@@ -1,17 +1,29 @@
 <?php
+  require_once('./header.php');
+  require_once('./config.php');
+?>
 
-$wildeQuotes = array(
-  "A little sincerity is a dangerous thing, and a great deal of it is absolutely fatal.",
-  "Always forgive your enemies; nothing annoys them so much.",
-  "America is the only country that went from barbarism to decadence without civilization in between.",
-  "I think that God in creating Man somewhat overestimated his ability.",
-  "I am not young enough to know everything.",
-  "Fashion is a form of ugliness so intolerable that we have to alter it every six months.",
-  "Most modern calendars mar the sweet simplicity of our lives by reminding us that each day that passes is the anniversary of some perfectly uninteresting event.",
-  "Scandal is gossip made tedious by morality."
-  );
-
-echo "<h1>Here's your quote!</h1>";
-echo "<h2>".$wildeQuotes[array_rand($wildeQuotes)]."</h2>";
-
+<div class="row">
+  	<div class="col-sm-12 text-center">
+      	<br>        	
+          <h1>Awesome Comics<br><small>Our daily source of Inspiration</small></h1>            
+          <div class="clearfix" style="min-height:60px;"> </div>           
+          <div class="social">
+          	<div class="twitter">
+              </div>
+              <div class="facebook">                
+              </div>
+          </div>
+          <div class="clearfix" style="min-height:60px;"> </div>
+          <h2>Thank You</h2>
+          <div class="well">
+          	<h4>You have Subscribed to our Monthly Comics!</h4>
+              <p>You will receive our next email in just a few minutes.</p>
+              <p>Until then, <a href="#">check out the archives</a>.</p>
+          </div>
+      </div>
+  </div>
+</div>
+<?php
+  require_once('./footer.php');
 ?>
