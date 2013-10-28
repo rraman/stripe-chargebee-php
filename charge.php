@@ -1,6 +1,5 @@
 <?php
 
-require_once('./header.php');
 require('./config.php');
 require('./redirect.php');
 
@@ -12,18 +11,13 @@ if ($_POST) {
         }
         $result = createSub();
         addAddress($result->subscription(), $result->customer());
-        redirect('confirm.php');
-    } catch (Exception $e) {
-        $error = $e->getMessage();
-        echo $error;
-    }
-
-    if ($error == NULL) {
-    } else {
-        echo "<script type=\"text/javascript\">$(\".payment-errors\").html(\"$error\");</script>";
+        redirect('thankyou.php');
+    } catch (ChargeBee_APIError $e) {
+        $jsonError = $e->getJsonObject();
+        header("HTTP/1.0 400 Error");
+        print_r(json_encode($jsonError, true));
     }
 }
-require('./footer.php');
 ?>
 
 <?php
@@ -42,8 +36,8 @@ function createSub() {
         "card" => array(
             "tmp_token" => $stripeToken
     ));
-    if (isset($_POST['coupon_id'])) {
-        $createSubParams['coupon'] = $_POST['coupon_id'];
+    if (isset($_POST['coupon'])) {
+        $createSubParams['coupon'] = $_POST['coupon'];
     }
     $result = ChargeBee_Subscription::create($createSubParams);
     return $result;

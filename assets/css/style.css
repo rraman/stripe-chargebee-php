@@ -17,7 +17,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	background:url(../images/banner-bg.gif) no-repeat top right;
 	color:#fff;
 }
-.jumbotron h1{
+.jumbotron h1,.h1{
 	font-family:comic;
 	color:#000;
 }
