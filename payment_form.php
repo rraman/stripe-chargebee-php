@@ -1,11 +1,11 @@
 <form id="payment-form" action="charge.php" method="post">
-	<h3>Purchase your comics now!!</h3>
+    <h3>Purchase your comics now!!</h3>
     <!-- to display errors returned by createToken -->
     <span class="payment-errors"></span>
     <form action="" method="POST" id="payment-form">
         <div class="form-row">
             <label>Card Number</label>
-                <input type="text" size="20" autocomplete="off" class="card-number" />
+            <input type="text" size="20" autocomplete="off" class="card-number" />
         </div>
         <div class="form-row">
             <label>CVC</label>
