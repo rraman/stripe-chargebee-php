@@ -70,14 +70,14 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="first_name">Name</label>
+                              <label for="first_name">First Name</label>
                               <input type="text" class="form-control" name="first_name" required data-msg-required="cannot be blank">
                               <small for="first_name" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="last_name">Surname</label>
+                              <label for="last_name">Last Name</label>
                               <input type="text" class="form-control" name="last_name" required data-msg-required="cannot be blank">
                               <small for="last_name" class="text-danger"></small>
                           </div>
@@ -94,7 +94,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="phone">Phone</label>
-                              <input type="text" maxlength="10" class="form-control" name="phone" required data-msg-required="cannot be blank">
+                              <input id="phone" type="text" maxlength="10" class="form-control" name="phone" required data-msg-required="cannot be blank">
                               <small for="phone" class="text-danger"></small>
                           </div>
                       </div>                   
@@ -174,7 +174,7 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="zip_code">Postal/Zip</label>
+                              <label for="zip_code">Zip Code</label>
                               <input type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
                               <small for="zip_code" class="text-danger"></small>
                           </div>
