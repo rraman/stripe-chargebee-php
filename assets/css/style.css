@@ -21,6 +21,10 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	font-family:comic;
 	color:#000;
 }
+.jumbotron.pricing{
+	padding-bottom:20px;
+	padding-top:20px;
+}
 h1 small{
 	font-family:segoe ui,helvetica neue,sans-serif;
 }
