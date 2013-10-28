@@ -33,14 +33,7 @@
      	</div>
       </div>
       <div class="clearfix visible-xs"></div>
-      <div class="col-sm-7" id="checkout_info">   
-      		<?php /*?><div class="row">
-            	<div class="col-xs-12">
-                    <div class="alert alert-success">
-                        <strong>Well done!</strong> You successfully read this important alert message.
-                    </div>         
-                </div>
-            </div><?php */?>                              
+      <div class="col-sm-7" id="checkout_info">                                
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
@@ -84,7 +77,7 @@
                   <div class="row">
                   	<div class="col-sm-12">
                       	<div class="form-group">
-                          	<label for="">Choosethe genre you would like to receive Comics for</label>
+                          	<label for="">Choose the genre you would like to receive Comics for</label>
                               <div class="form-control multicheck">
                                   <label class="checkbox-inline col-sm-3 col-xs-12">
                                     	<input type="checkbox" value="option1"> Action
