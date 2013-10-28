@@ -85,7 +85,7 @@ $(document).ready(function() {
           	</div>
           </div>
           <hr>                        
-          <form>
+          <form action="charge.php" method="post" id="payment-form">
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="page-header">
@@ -98,14 +98,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Name</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="first_name">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <small class="text-danger pull-right">cannot be blank</small>
                               <label for="">Surname</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="last_name">
                           </div>
                       </div>
                   </div>
@@ -114,14 +114,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Email</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="email">
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">Phone</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="phone">
                           </div>
                       </div>                   
                   </div>
@@ -221,7 +221,7 @@ $(document).ready(function() {
                               <input type="text" class="form-control">                                
                           </div>
                       </div>
-					<div class="col-sm-6">
+                      <div class="col-sm-6">
                       	<div class="form-group">
                           	<label for="">&nbsp;</label>
                               <span class="cb-cards hidden-xs">                                        
@@ -241,12 +241,13 @@ $(document).ready(function() {
                               <div class="row">
                                   <div class="col-xs-6">
                                       <select class="form-control">
-                                          
+                                          <option>01</option>
+                                          <option>02</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
                                       <select class="form-control">
-                                          
+                                          <option>2015</option>
                                       </select>
                                   </div>
                               </div>                                            
