@@ -20,7 +20,7 @@
                   <a href="#" 
                      onclick="window.open(
                      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://www.facebook.com/pages/Running-book/244681115688639'), 
-                     'facebook-share-dialog','width=626,height=436'); return false;"> Share on Facebook </a>
+                     'facebook-share-dialog','width=626,height=436'); return false;"> Share on Facebook &uarr; </a>
 
               </div>
           </div>

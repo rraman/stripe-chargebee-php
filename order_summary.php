@@ -82,6 +82,7 @@
           <input class="btn btn-info" type="submit" value="Apply Coupon">
           </span>
         </div>
+        <h6 class="process" style="display:none;">Processing&hellip;</h6>
         <small for="coupon" class="text-danger"></small>
         </form>
       </div>

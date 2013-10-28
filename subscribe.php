@@ -39,29 +39,6 @@
       </div>
       <div class="clearfix visible-xs"></div>
       <div class="col-sm-7" id="checkout_info">
-          <!--div class="row">
-          	<div class="col-sm-12">
-                  <div class="page-header"><h3>Hey! There's more!</h3></div>
-                  <div class="row">
-                  	<div class="col-xs-12">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox">
-                              Complete access to our digital archives Containing 13000+ comic book! - <strong>$5</strong></label>
-                          </label>
-                      </div>
-                  </div>
-                  	<div class="col-xs-12">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox" checked>Be a part of our discussion forums and find out what the world is saying - <strong>$5</strong></label>
-                          </label>
-                      </div>
-                  </div>
-                  </div>
-          	</div>
-          </div>
-          <hr-->                        
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
@@ -257,8 +234,7 @@
                       	<hr>                            
                           <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
-                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
-                          <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
+                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe">&nbsp;&nbsp;&nbsp;&nbsp;<span class="process" style="display:none;">Processing&hellip;</span></p><br><br>                          
                       </div>
                   </div>     
                   <input type="hidden" name="plan" value="<?php echo $_GET['plan'] ?>">
