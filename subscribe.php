@@ -5,25 +5,34 @@
   $plan = $_GET['plan'];
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
-<div class="row">	
+ <div id="container" class="container">
+<div class="row">		
   	<div class="col-sm-4 col-xs-12 pull-right" id="order_summary">
     	  <?php
     	  if(isset($plan)){
           include('order_summary.php');
         }
         ?>
-        <div class="row">
+        <br><br>
+        <div class="row hidden-xs">
         	<div class="col-sm-12">
-            	<img src="assets/images/secure.png" alt="secure server">
+            	<img src="assets/images/secure.png" alt="secure server"/>
                 <div class="using">
-                    <h3>Chargebee &amp; Stripe</h3>
+                    <h4>Chargebee &amp; Stripe</h4>
                     <p>30 days payment return</p>
                 </div>
             </div>
      	</div>
       </div>
       <div class="clearfix visible-xs"></div>
-      <div class="col-sm-7" id="checkout_info">            
+      <div class="col-sm-7" id="checkout_info">   
+      		<?php /*?><div class="row">
+            	<div class="col-xs-12">
+                    <div class="alert alert-success">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                    </div>         
+                </div>
+            </div><?php */?>
           <div class="row">
           	<div class="col-sm-12">
                   <div class="page-header"><h3>Hey! There's more!</h3></div>
@@ -31,8 +40,8 @@
                   	<div class="col-xs-12">
                       <div class="checkbox">
                           <label>
-                              <input type="checkbox">Complete access to our digital archives
-  Containing 13000+ comic book! - <strong>$5</strong></label>
+                              <input type="checkbox">
+                              Complete access to our digital archives Containing 13000+ comic book! - <strong>$5</strong></label>
                           </label>
                       </div>
                   </div>
@@ -74,9 +83,9 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Email</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="email">
+                              <label for="email">Email</label>
+                              <small for="email" class="text-danger pull-right"></small>
+                              <input id="email" type="text" class="form-control" name="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
                           </div>
                       </div> 
                       <div class="col-sm-6">
@@ -169,23 +178,22 @@
                       </div>                                                
                   </div>
 				<div class="row">
-                      <div class="col-sm-12">
-                          <div class="page-header">
-                              <h3>Payment Information</h3>
-                          </div>
-                      </div>
-                  </div>                  
-                  <div class="row">
-                      <div class="col-sm-6">
-                      	<div class="form-group">
-                              <label for="">Credit Card Number</label>
-                              <small class="text-danger pull-right">invalid card number</small>
-                              <input type="text" class="card-number form-control" >                                
-                          </div>
-                      </div>
-                      <div class="col-sm-6">
-                      	<div class="form-group">
-                          	<label for="">&nbsp;</label>
+                    <div class="col-sm-12">
+                        <div class="page-header">
+                        	<h3>Payment Information</h3>
+                        </div>
+                    </div>
+                </div>                  
+                <div class="row">                 	  
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="">Credit Card Number</label>
+                            <small class="text-danger pull-right">invalid card number</small>
+                            <div class="row">
+                            	<div class="col-sm-6">
+                            	<input type="text" class="card-number form-control" > 
+                           	</div>
+                            <div class="col-sm-6">                      	
                               <span class="cb-cards hidden-xs">                                        
                                   <span class="visa">  </span>                                        
                                   <span class="mastercard">  </span>                                        
@@ -193,8 +201,10 @@
                                   <span class="discover">  </span>
                               </span> 
                        	</div>
-                 		</div>                                       
-                  </div>
+                 		</div>                               
+                        </div>
+                    </div>                                                             
+                </div>
                   <div class="row">                
                       <div class="col-sm-6">                                	
                           <div class="form-group">
@@ -245,7 +255,7 @@
               </form>
       </div>
   </div>
-
+</div>
 <?php
   require_once('./footer.php');
 ?>

@@ -2,7 +2,7 @@
   require_once('./header.php');
   require_once('./config.php');
 ?>
-
+ <div id="container" class="container">
 <div class="row">
   	<div class="col-sm-12 text-center">
       	<br>        	

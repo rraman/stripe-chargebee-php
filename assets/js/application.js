@@ -1,3 +1,8 @@
+jQuery.validator.setDefaults({
+    errorClass  : "text-danger",
+    errorElement: "small"
+});
+
 // this identifies your website in the createToken call below
 function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
     
@@ -55,6 +60,8 @@ function stripeResponseHandler(status, response) {
 }
 
 $(document).ready(function() {
+    $("#subscribe-form").validate();
+    
     $("#subscribe-form").submit(function(event) {
         // disable the submit button to prevent repeated clicks
         $('.submit-button').attr("disabled", "disabled");
@@ -67,4 +74,31 @@ $(document).ready(function() {
         }, stripeResponseHandler);
         return false; // submit from callback
     });
+    
+    $('#discount-form').on('submit', function(e) {
+         var postData = $(this).serializeArray();
+         var formURL = $(this).attr("action");
+         $.ajax({
+             url: "order_summary.php",
+             type: "GET",
+             data: postData,
+             success: function(data, textStatus, jqXHR)
+             {
+                 var cpnFld = $("#subscribe-form").find("input[name='coupon']");
+                 var couponCode = $("#discount-form").find("input[name='coupon']").val();
+                 if(cpnFld.length == 0) {
+                     $("#subscribe-form").append("<input type='hidden' name='coupon' value='" + couponCode + "' />");
+                 } else {
+                     cpnFld.val(couponCode);
+                 }
+                 $('#order_summary').html(data);
+             },
+             error: function(jqXHR, textStatus, errorThrown)
+             {
+                 
+             }
+         });
+         e.preventDefault();
+     });
+    
 });
