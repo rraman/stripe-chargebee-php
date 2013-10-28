@@ -2,7 +2,7 @@
 <div class="jumbotron">
     <div class="container">
     	<div class="hidden-xs" style="min-height:60px;"></div>
-        <h1>Awesome Comics)</h1>
+        <h1>Wondrous Comics)</h1>
         <div class="hidden-xs" style="min-height:60px;"></div>             
     </div>
 </div>
@@ -35,23 +35,22 @@
        	</div>
         <div class="row">
             <div class="col-sm-6 col-md-4">           
-                <p class="lead">1.Choose your comics</p> 
-                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>          
+                <p class="h4">1. The Comics:</p>
+				<p>Select the comics you would like to read<br><br></p>
                 <div class="thumbnail"><img src="assets/images/step1.jpg" alt=""></div>
             </div>
             <div class="col-sm-6 col-md-4">                    	
-                <p class="lead">2.Choose plan</p> 
-                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>          
+                <p class="h4">2. The Plan:</p>
+				<p>Select the pricing plan you would like to subscribe for</p>          
                 <div class="thumbnail"><img src="assets/images/step2.jpeg" alt=""></div>
             </div>
             <div class="col-sm-6 col-md-4">                    	
-                <p class="lead">3.Get Comics</p> 
-                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>          
+                <p class="h4">3. The Delivery:</p>
+				<p>That's it! The comics will be delivered to your address.</p>          
                 <div class="thumbnail"><img src="assets/images/step3.gif" alt="" class="img-responsive"></div>
             </div>
         </div>
-    </div>   
-    <hr class="dashed">    
+    </div>     
 </div>
 <hr>
 <div class="container">
