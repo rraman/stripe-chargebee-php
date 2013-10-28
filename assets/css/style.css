@@ -58,9 +58,7 @@ h1 small{
 	color: #ffffff;
 	margin:0 10px;
 }
-.form-group > .text-danger{
-	display:none;
-}
+
 .form-control,
 .input-group-addon,
 .btn{
