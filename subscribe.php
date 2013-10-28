@@ -142,7 +142,7 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="addr">Address1</label>
+                              <label for="addr">Address</label>
                               <input type="text" class="form-control" name="addr" required data-msg-required="cannot be blank">
                               <small for="addr" class="text-danger"></small>
                           </div>
