@@ -11,11 +11,11 @@ if ($_POST) {
         }
         $result = createSub();
         addAddress($result->subscription(), $result->customer());
-        redirect('thankyou.php');
+        echo "{'forward': 'thankyou.php'}";
     } catch (ChargeBee_APIError $e) {
         $jsonError = $e->getJsonObject();
         header("HTTP/1.0 400 Error");
-        print_r(json_encode($jsonError, true));
+        print(json_encode($jsonError, true));
     }
 }
 ?>
@@ -24,14 +24,13 @@ if ($_POST) {
 
 function createSub() {
     $stripeToken = $_POST['stripeToken'];
-
     $createSubParams = array(
         "planId" => $_POST['plan'],
         "customer" => array(
-            "email" => $_POST['customer[email]'],
-            "firstName" => $_POST['customer[first_name]'],
-            "lastName" => $_POST['customer[last_name]'],
-            "phone" => $_POST['customer[phone]']
+            "email" => $_POST["email"],
+            "firstName" => $_POST["first_name"],
+            "lastName" => $_POST["last_name"],
+            "phone" => $_POST["phone"]
         ),
         "card" => array(
             "tmp_token" => $stripeToken

@@ -70,32 +70,32 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[first_name]">First Name</label>
-                              <input type="text" class="form-control" name="customer[first_name]" required data-msg-required="cannot be blank">
-                              <small for="customer[first_name]" class="text-danger"></small>
+                              <label for="first_name">First Name</label>
+                              <input type="text" class="form-control" name="first_name" required data-msg-required="cannot be blank">
+                              <small for="first_name" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[last_name]">Last Name</label>
-                              <input type="text" class="form-control" name="customer[last_name]" required data-msg-required="cannot be blank">
-                              <small for="customer[last_name]" class="text-danger"></small>
+                              <label for="last_name">Last Name</label>
+                              <input type="text" class="form-control" name="last_name" required data-msg-required="cannot be blank">
+                              <small for="last_name" class="text-danger"></small>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[email]">Email</label>
-                              <input id="email" type="text" class="form-control" name="customer[email]" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
-                              <small for="customer[email]" class="text-danger"></small>
+                              <label for="email">Email</label>
+                              <input id="email" type="text" class="form-control" name="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
+                              <small for="email" class="text-danger"></small>
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[phone]">Phone</label>
-                              <input id="phone" type="text" maxlength="10" class="form-control" name="customer[phone]" required data-msg-required="cannot be blank">
-                              <small for="customer[phone]" class="text-danger"></small>
+                              <label for="phone">Phone</label>
+                              <input id="phone" type="text" maxlength="10" class="form-control" name="phone" required data-msg-required="cannot be blank">
+                              <small for="phone" class="text-danger"></small>
                           </div>
                       </div>                   
                   </div>

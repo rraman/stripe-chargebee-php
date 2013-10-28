@@ -2,7 +2,7 @@
 <div class="col-xs-12">
 <div class="row">
 	<div class="col-sm-12">
-      <div class="page-header"><h3>Order Summary</h3></div>
+      <div class="page-header"><h3>Your Order Summary</h3></div>
   	</div>
 </div>
 <div class="row">
