@@ -44,20 +44,11 @@ $(document).ready(function() {
 
 <div class="row">	
   	<div class="col-sm-4 col-xs-12 pull-right" id="order_summary">
-          <div class="row">
-          	<div class="col-sm-12">
-                <div class="page-header"><h3>Order Summary</h3></div>
-            	</div>
-        	</div>
-          <div class="row">
-          	<div class="col-sm-12">
-          	  <?php
-          	  if(isset($plan)){
-                include('order_summary.php');
-              }
-              ?>
-           	</div>
-       	</div>            
+    	  <?php
+    	  if(isset($plan)){
+          include('order_summary.php');
+        }
+        ?>
       </div>
       <div class="col-sm-7" id="checkout_info">            
           <div class="row">

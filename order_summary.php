@@ -1,3 +1,11 @@
+<div class="row">
+	<div class="col-sm-12">
+      <div class="page-header"><h3>Order Summary</h3></div>
+  	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+
 <ul class="text-right list-unstyled">
 <?php
   require_once('./config.php');
@@ -57,14 +65,26 @@
 ?>
 </ul>
 <hr>
-<div class="row">        	
-  <div class="col-md-12">
-    <p>Have coupon code?</p>
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-          <button class="btn btn-info" type="button">Apply Coupon</button>
-      </span>
-    </div>
+<?php
+  if(!isset($_GET['coupon']))
+  {
+    ?>
+    <div class="row">        	
+      <div class="col-md-12">
+        <p>Have coupon code?</p>
+        <form action="order_summary.php" method="GET">
+        <input type="hidden" name="plan" value="<?php echo $plan ?>">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+          <input class="btn btn-info" type="submit" value="Apply Coupon">
+          </span>
+        </div>
+        </form>
+      </div>
+    </div>    
+<?php
+  }
+?>
   </div>
 </div>
