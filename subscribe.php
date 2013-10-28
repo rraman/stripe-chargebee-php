@@ -49,7 +49,17 @@ $(document).ready(function() {
           include('order_summary.php');
         }
         ?>
+        <div class="row">
+        	<div class="col-sm-12">
+            	<img src="assets/images/secure.png" alt="secure server">
+                <div class="using">
+                    <h3>Chargebee &amp; Stripe</h3>
+                    <p>30 days payment return</p>
+                </div>
+            </div>
+     	</div>
       </div>
+      <div class="clearfix visible-xs"></div>
       <div class="col-sm-7" id="checkout_info">            
           <div class="row">
           	<div class="col-sm-12">
