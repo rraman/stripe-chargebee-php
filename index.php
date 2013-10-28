@@ -28,26 +28,30 @@
 </div>
 <div class="container">	    
     <div class="row description">
-    	<div class="row description">
-            <div class="col-sm-12">          
-                <h2>How it works</h2>
+    	<div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">          
+                    <h2>How it works</h2>
+                </div>
             </div>
-       	</div>
-        <div class="row">
-            <div class="col-sm-6 col-md-4">           
-                <p class="h4">1. The Comics:</p>
-				<p>Select the comics you would like to read<br><br></p>
-                <div class="thumbnail"><img src="assets/images/step1.jpg" alt=""></div>
-            </div>
-            <div class="col-sm-6 col-md-4">                    	
-                <p class="h4">2. The Plan:</p>
-				<p>Select the pricing plan you would like to subscribe for</p>          
-                <div class="thumbnail"><img src="assets/images/step2.jpeg" alt=""></div>
-            </div>
-            <div class="col-sm-6 col-md-4">                    	
-                <p class="h4">3. The Delivery:</p>
-				<p>That's it! The comics will be delivered to your address.</p>          
-                <div class="thumbnail"><img src="assets/images/step3.gif" alt="" class="img-responsive"></div>
+            <div class="row">
+                <div class="col-sm-4">           
+                    <p class="h4">1. The Comics:</p>
+                    <p>Select the comics you would like to read<br><br></p>
+                    <div class="thumbnail"><img src="assets/images/step1.jpg" alt=""></div>
+                </div>
+				<hr class="clearfix dashed visible-xs">
+                <div class="col-sm-4">                    	
+                    <p class="h4">2. The Plan:</p>
+                    <p>Select the pricing plan you would like to subscribe for</p>          
+                    <div class="thumbnail"><img src="assets/images/step2.jpeg" alt=""></div>
+                </div>
+				<hr class="clearfix dashed visible-xs">
+                <div class="col-sm-4">                    	
+                    <p class="h4">3. The Delivery:</p>
+                    <p>That's it! The comics will be delivered to your address.</p>          
+                    <div class="thumbnail"><img src="assets/images/step3.gif" alt="" class="img-responsive"></div>
+                </div>
             </div>
         </div>
     </div>     
