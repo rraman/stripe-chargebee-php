@@ -74,7 +74,7 @@
     <div class="row">        	
       <div class="col-md-12">
         <p>Have coupon code?</p>
-        <form id="checkout_form" action="order_summary.php" method="GET">
+        <form id="discount-form" action="order_summary.php" method="GET">
         <input type="hidden" name="plan" value="<?php echo $plan ?>">
         <div class="input-group">
           <input type="text" class="form-control" name="coupon">
