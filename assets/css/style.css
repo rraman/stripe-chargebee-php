@@ -20,6 +20,9 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 h1{
 	font-family:comic;
 }
+h1 small{
+	font-family:segoe ui,helvetica neue,sans-serif;
+}
 .list-group-item-heading{
 	font-weight:bold;
 }
@@ -104,6 +107,9 @@ li{
 	float: left;
 	margin: 0 2% 0 0;
 	margin-top:7px;
+}
+.dashed{
+	border-style:dashed;
 }
 cb-cards>span.visa {
 	background-position: -108px 0;
