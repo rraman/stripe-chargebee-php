@@ -1,11 +1,6 @@
 <?php
-  require_once('./header.php');
+  require_once('./topbar.php');
 ?>
-<div class="jumbotron">
-    <div class="container">    	
-        <h3 class="h1">Wondrous Comics)</h3>
-    </div>
-</div>
 <div class="container">
 	<div class="row">
     	<div class="col-sm-12">      
