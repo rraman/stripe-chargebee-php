@@ -40,30 +40,7 @@
                         <strong>Well done!</strong> You successfully read this important alert message.
                     </div>         
                 </div>
-            </div><?php */?>
-          <!--div class="row">
-          	<div class="col-sm-12">
-                  <div class="page-header"><h3>Hey! There's more!</h3></div>
-                  <div class="row">
-                  	<div class="col-xs-12">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox">
-                              Complete access to our digital archives Containing 13000+ comic book! - <strong>$5</strong></label>
-                          </label>
-                      </div>
-                  </div>
-                  	<div class="col-xs-12">
-                      <div class="checkbox">
-                          <label>
-                              <input type="checkbox" checked>Be a part of our discussion forums and find out what the world is saying - <strong>$5</strong></label>
-                          </label>
-                      </div>
-                  </div>
-                  </div>
-          	</div>
-          </div>
-          <hr-->                        
+            </div><?php */?>                              
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
@@ -259,8 +236,7 @@
                       	<hr>                            
                           <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
-                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
-                          <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
+                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"><span class="process text-danger" style="display:none;">Processing&hellip;</span></p>                          
                       </div>
                   </div>     
                   <input type="hidden" name="plan" value="<?php echo $_GET['plan'] ?>">
