@@ -1,7 +1,10 @@
 <?php
   require_once('./header.php');
   require_once('./config.php');
-  
+  require_once('./redirect.php');
+  if (!isset($_GET['plan'])){
+      redirect('pricing.php');
+  }
   $plan = $_GET['plan'];
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
