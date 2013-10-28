@@ -1,3 +1,29 @@
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+
+<script>
+     $(document).ready(function() {
+             $('#checkout_form').on('submit', function(e) {
+                 var postData = $(this).serializeArray();
+                 var formURL = $(this).attr("action");
+                 $.ajax({
+                     url: "order_summary.php",
+                     type: "GET",
+                     data: postData,
+                     success: function(data, textStatus, jqXHR)
+                     {
+                         $('#order_summary').html(data);
+                         //$('#checkout_form').html(data);    
+                         
+                     },
+                     error: function(jqXHR, textStatus, errorThrown)
+                     {
+                         alert(textstatus);
+                     }
+                 });
+                 e.preventDefault();
+             });
+         });
+    </script>
 <div class="row">
 	<div class="col-sm-12">
       <div class="page-header"><h3>Order Summary</h3></div>
@@ -72,10 +98,10 @@
     <div class="row">        	
       <div class="col-md-12">
         <p>Have coupon code?</p>
-        <form action="order_summary.php" method="GET">
+        <form id="checkout_form" action="order_summary.php" method="GET">
         <input type="hidden" name="plan" value="<?php echo $plan ?>">
         <div class="input-group">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" name="coupon">
           <span class="input-group-btn">
           <input class="btn btn-info" type="submit" value="Apply Coupon">
           </span>
