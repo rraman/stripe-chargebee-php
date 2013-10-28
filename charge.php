@@ -14,7 +14,7 @@ if ($_POST) {
         redirect('confirm.php');
     } catch (Exception $e) {
         $error = $e->getMessage();
-        redirect('?error='.$e->getMessage());
+        redirect('?error=' . $e->getMessage());
     }
 
     if ($error == NULL) {
@@ -44,6 +44,7 @@ require('./footer.php');
 function createSub() {
     $stripeToken = $_POST['stripeToken'];
     $plan = $_POST['plan'];
+    $coupon = $_POST['coupon'];
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
     $email = $_POST['email'];
@@ -51,6 +52,7 @@ function createSub() {
 
     $result = ChargeBee_Subscription::create(array(
                 "planId" => $plan,
+                "coupon" => $coupon,
                 "customer" => array(
                     "email" => $email,
                     "firstName" => $firstName,
