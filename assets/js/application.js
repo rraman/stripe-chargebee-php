@@ -5,24 +5,29 @@ jQuery.validator.setDefaults({
 
 // this identifies your website in the createToken call below
 function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
-    
+    var errParam=jqXHR.responseJSON.error_param;
+    var errMsg=jqXHR.responseJSON.error_msg;
+     $("#subscribe-form").validate().showErrors({errParam:errMsg});
 }
 
 function subscribeResponseHandler(responseText, statusText, xhr, $form) {
     
 }
 
-function displayError(response) {
+function stripeErrorDisplayHandler(response) {
+   //card field map
     var errorMap = {
         "number": "card-number",
         "cvc": "card-cvc",
         "exp_month": "card-expiry-month",
         "exp_year": "card-expiry-year"
     };
+    //check if param exist in error
     if (response.error.param) {
-        var par = errorMap[response.error.param];
-        if (par) {
-            $('.' + par)
+        var paramClassName = errorMap[response.error.param];
+        if (paramClassName) {
+            //display error in found class
+            $('.' + paramClassName)
                     .parents('.form-group')
                     .find('.text-danger')
                     .text(response.error.message).show();
@@ -39,7 +44,7 @@ function stripeResponseHandler(status, response) {
         // re-enable the submit button
         $('.submit-button').removeAttr("disabled");
         // show the errors on the form
-        displayError(response);
+        stripeErrorDisplayHandler(response);
     } else {
         var form$ = $("#subscribe-form");
         // token contains id, last4, and card type
