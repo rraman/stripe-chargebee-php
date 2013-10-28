@@ -13,23 +13,22 @@
                     	<img src="assets/images/plan1.gif" alt="">
                         <h3>$8/Month</h3>
                         <h4>3 Months</h4>
-                        <h4>You pay $5</h4>                       
-                        <h4>You save $</h4>
+                        <h4>You pay $24.00</h4>
                     </div>
                     <hr class="visible-xs">
                     <div class="col-sm-4 col-xs-12">
 <img src="assets/images/plan2.gif" alt="">
-                        <h3>$7.5/Month</h3>
+                        <h3>$7/Month</h3>
                         <h4>6 Months</h4>
-                        <h4>You pay $5</h4>                       
-                        <h4>You save $</h4>
+                        <h4>You pay $42.00</h4>
+                        <h4>You save 15%</h4>
                     </div>
                     <div class="col-sm-4 col-xs-12">
 <img src="assets/images/plan3.gif" alt="">
                         <h3>$6/Month</h3>
                         <h4>1 Year</h4>
-                        <h4>You pay $5</h4>                       
-                        <h4>You save $</h4>
+                        <h4>You pay $72</h4>                       
+                        <h4>You save 25%</h4>
                     </div>                
                 </div>            
             </div>    

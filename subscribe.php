@@ -1,5 +1,5 @@
 <?php
-  require_once('./header.php');
+  require_once('./topbar.php');
   require_once('./config.php');
   require_once('./redirect.php');
   if (!isset($_GET['plan'])){
