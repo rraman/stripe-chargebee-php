@@ -61,7 +61,7 @@
     catch (Exception $e) 
     {
       $error = $e->getMessage();
-      echo $error;
+      header("HTTP/1.0 400 Error");
     }
   }
 ?>
@@ -77,11 +77,12 @@
         <form id="discount-form" action="order_summary.php" method="GET">
         <input type="hidden" name="plan" value="<?php echo $plan ?>">
         <div class="input-group">
-          <input type="text" class="form-control" name="coupon">
+          <input id="coupon" type="text" class="form-control" name="coupon">
           <span class="input-group-btn">
           <input class="btn btn-info" type="submit" value="Apply Coupon">
           </span>
         </div>
+        <small for="coupon" class="text-danger"></small>
         </form>
       </div>
     </div>    
