@@ -11,11 +11,10 @@ if ($_POST) {
             throw new Exception("The Stripe Token was not generated correctly");
         }
         $result = createSub();
-        print_r($result);
-//        redirect('confirm.php');
+        redirect('confirm.php');
     } catch (Exception $e) {
         $error = $e->getMessage();
-        echo $error;
+        redirect('?error='.$e->getMessage());
     }
 
     if ($error == NULL) {
@@ -44,7 +43,7 @@ require('./footer.php');
 
 function createSub() {
     $stripeToken = $_POST['stripeToken'];
-    $plan = $_POST['plan_id'];
+    $plan = $_POST['plan'];
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
     $email = $_POST['email'];

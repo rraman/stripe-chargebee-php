@@ -279,7 +279,7 @@ $(document).ready(function() {
                           <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
                       </div>
                   </div>     
-              <input type="hidden" name="plan_id" value='<?= $_GET['plan_id'] ?>'>
+              <input type="hidden" name="plan" value='<?= $_GET['plan'] ?>'>
               </form>            
               <br><br>
       </div>
