@@ -71,7 +71,7 @@
   if(!isset($_GET['coupon']))
   {
     ?>
-    <div class="row">        	
+    <div class="row">
       <div class="col-md-12">
         <p>Have coupon code?</p>
         <form id="discount-form" action="order_summary.php" method="GET">

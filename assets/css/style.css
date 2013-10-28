@@ -14,11 +14,12 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .jumbotron{	
 	margin-bottom:0;
 	border-bottom:1px solid grey;
-	background:url(../images/7.jpg) no-repeat top left;
+	background:url(../images/banner-bg.gif) no-repeat top right;
 	color:#fff;
 }
-h1{
+.jumbotron h1,.h1{
 	font-family:comic;
+	color:#000;
 }
 h1 small{
 	font-family:segoe ui,helvetica neue,sans-serif;
@@ -71,7 +72,6 @@ li{
 }
 .description img{
 	max-height:220px;
-	width:100%;
 	margin-bottom:12px;
 }
 .hellip1{

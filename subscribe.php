@@ -1,7 +1,10 @@
 <?php
-  require_once('./header.php');
+  require_once('./topbar.php');
   require_once('./config.php');
-  
+  require_once('./redirect.php');
+  if (!isset($_GET['plan'])){
+      redirect('pricing.php');
+  }
   $plan = $_GET['plan'];
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
@@ -33,7 +36,7 @@
                     </div>         
                 </div>
             </div><?php */?>
-          <div class="row">
+          <!--div class="row">
           	<div class="col-sm-12">
                   <div class="page-header"><h3>Hey! There's more!</h3></div>
                   <div class="row">
@@ -55,7 +58,7 @@
                   </div>
           	</div>
           </div>
-          <hr>                        
+          <hr-->                        
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
@@ -75,7 +78,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="last_name">Surname</label>
-                              <input type="text" class="form-control" name="last_name" required>
+                              <input type="text" class="form-control" name="last_name" required data-msg-required="cannot be blank">
                               <small for="last_name" class="text-danger"></small>
                           </div>
                       </div>
@@ -91,7 +94,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="phone">Phone</label>
-                              <input type="text" maxlength="10" class="form-control" name="phone" required>
+                              <input type="text" maxlength="10" class="form-control" name="phone" required data-msg-required="cannot be blank">
                               <small for="phone" class="text-danger"></small>
                           </div>
                       </div>                   
@@ -140,7 +143,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="addr">Address1</label>
-                              <input type="text" class="form-control" name="addr" required>
+                              <input type="text" class="form-control" name="addr" required data-msg-required="cannot be blank">
                               <small for="addr" class="text-danger"></small>
                           </div>
                       </div>
@@ -156,14 +159,14 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="city">City</label>
-                              <input type="text" class="form-control" name="city" required>
+                              <input type="text" class="form-control" name="city" required data-msg-required="cannot be blank">
                               <small for="city" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="state">State</label>
-                              <input type="text" class="form-control" name="state" required>
+                              <input type="text" class="form-control" name="state" required data-msg-required="cannot be blank">
                               <small for="state" class="text-danger"></small>
                           </div>
                       </div>
@@ -172,7 +175,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="zip_code">Postal/Zip</label>
-                              <input type="text" class="form-control" name="zip_code" required>
+                              <input type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
                               <small for="zip_code" class="text-danger"></small>
                           </div>
                       </div>                                                
@@ -190,7 +193,8 @@
                             <label for="card_no">Credit Card Number</label>
                             <div class="row">
                             	<div class="col-sm-6">
-                            	<input id="card_no" type="text" class="card-number form-control" required> 
+
+                            	<input type="text" class="card-number form-control" id="card_no" required data-msg-required="cannot be blank"> 
                            	</div>
                             <div class="col-sm-6">                      	
                               <span class="cb-cards hidden-xs">                                        
@@ -211,20 +215,23 @@
                               <label for="expiry_month">Card Expiry</label>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-month form-control" id="expiry_month" required>
-                                          <option>01</option>
+
+                                      <select class="card-expiry-month form-control" id="expiry_month" required data-msg-required="empty">
+                                          <option selected>01</option>
                                           <option>02</option>
                                           <option>13</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-year form-control" id="expiry_year" required>
-                                          <option>2015</option>
-                                          <option>2223</option>
+
+                                      <select class="card-expiry-year form-control" id="expiry_year" required data-msg-required="empty">
+                                          <option selected="">2015</option>
+                                          <option>2023</option>
                                       </select>
                                   </div>
                               </div> 
-                              <small for="expiry_month" class="text-danger pull-right"></small>
+                              <small for="expiry_month" class="text-danger"></small>
+                              <small for="expiry_year" class="text-danger"></small>
                           </div>                                       
                       </div>
                       <div class="col-sm-6">
@@ -232,20 +239,20 @@
                               <label for="ccv">CCV</label>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="card-cvc form-control" id="ccv" placeholder="CCV" required>
+                                      <input type="text" class="card-cvc form-control" id="ccv" placeholder="CCV" required data-msg-required="empty">
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>
                                   </div>
                               </div>
-                              <small for="ccv" class="text-danger pull-right"></small>
+                              <small for="ccv" class="text-danger"></small>
                           </div>
                       </div>                                      
                   </div>                      
                   <div class="row">
                       <div class="col-sm-12">
                       	<hr>                            
-                          <p><input type="checkbox"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                          <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
                           <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
                           <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
