@@ -19,10 +19,15 @@
         <br><br>
         <div class="row hidden-xs">
         	<div class="col-sm-12">
+            	<br><br><br><br>                
             	<img src="assets/images/secure.png" alt="secure server"/>
-                <div class="using">
-                    <h4>Chargebee &amp; Stripe</h4>
-                    <p>30 days payment return</p>
+                <br><br>
+                <div class="using">                    
+                    <img src="assets/images/guarantee.jpg">
+                    <br>
+                    <hr class="dashed">
+                    <h5>Powered by</h5>                    
+                    <img src="assets/images/powered.png">
                 </div>
             </div>
      	</div>
