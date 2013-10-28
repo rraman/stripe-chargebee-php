@@ -17,6 +17,11 @@
             <span> / </span>
             <input type="text" size="4" class="card-expiry-year"/>
         </div>
+        
+        <div class="form-row">
+            <label>Email</label>
+            <input type="text" name="email"/>
+        </div>
         <button type="submit" class="submit-button">Buy!</button>
     </form>
 </form>

@@ -11,21 +11,17 @@ if ($_POST) {
             throw new Exception("The Stripe Token was not generated correctly");
         }
         $stripeToken = $_POST['stripeToken'];
-        $plan = $_POST['plan_id'];
+//        $plan = $_POST['plan_id'];
         $email = $_POST['email'];
-        $firstName = $_POST['first_name'];
-        $lastName = $_POST['last_name'];
-        $phone = $_POST['phone'];
-
-        $result = createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken);
-        header("Location: confirm.php");
-        /* Redirect to a different page in the current directory that was requested */
-//        $host = $_SERVER['HTTP_HOST'];
-//        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-//        $extra = 'mypage.php';
-//        header("Location: http://$host$uri/$extra");
+//        $firstName = $_POST['first_name'];
+//        $lastName = $_POST['last_name'];
+//        $result = createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken);
+        $result = createSub($email, $stripeToken);
+//        print_r($result);
+        redirect('confirm.php');
     } catch (Exception $e) {
         $error = $e->getMessage();
+        echo $error;
     }
 
     if ($error == NULL) {
@@ -47,23 +43,29 @@ if ($_POST) {
         echo "<script type=\"text/javascript\">$(\".payment-errors\").html(\"$error\");</script>";
     }
 }
-require_once('./footer.php');
+require('./footer.php');
 ?>
 
 <?php
 
-function createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken) {
+//function createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken) {
+function createSub($email, $stripeToken) {
     $result = ChargeBee_Subscription::create(array(
-                "planId" => $plan,
+                "planId" => 'basic',
                 "customer" => array(
                     "email" => $email,
-                    "firstName" => $firstName,
-                    "lastName" => $lastName,
-                    "phone" => $phone
+                    "firstName" => 'john',
+                    "lastName" => 'cruze'
                 ),
                 "card" => array(
                     "tmp_token" => $stripeToken
     )));
     return $result;
+}
+
+function redirect($path) {
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    header("Location: http://$host$uri/$path");
 }
 ?>
