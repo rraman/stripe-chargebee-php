@@ -28,7 +28,7 @@
           <h2>Thank You</h2>
           <div class="well">
           	<h4>You have Subscribed to our Monthly Comics!</h4>
-              <p>You will receive our next email in just a few minutes.</p>
+              <p>Please note that the comics will be delivered from the next month.</p>
               <p>Until then, <a href="#">check out the archives</a>.</p>
           </div>
       </div>
