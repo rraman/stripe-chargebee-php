@@ -110,4 +110,11 @@ $(document).ready(function(e){
  $('#phone').on('keyup', function(e) {
   this.value = this.value.replace(/[^0-9]/g,'');
 });
+$('#zip_code').on('keyup', function(e) {
+  this.value = this.value.replace(/[^0-9]/g,'');
+});
+$('#card_no').on('keyup', function(e) {
+  this.value = this.value.replace(/[^0-9]/g,'');
+});
+
 });

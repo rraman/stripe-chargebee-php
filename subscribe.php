@@ -175,7 +175,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="zip_code">Zip Code</label>
-                              <input type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
+                              <input id="zip_code" type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
                               <small for="zip_code" class="text-danger"></small>
                           </div>
                       </div>                                                
