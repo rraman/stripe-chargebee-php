@@ -33,7 +33,7 @@
                     </div>         
                 </div>
             </div><?php */?>
-          <div class="row">
+          <!--div class="row">
           	<div class="col-sm-12">
                   <div class="page-header"><h3>Hey! There's more!</h3></div>
                   <div class="row">
@@ -55,7 +55,7 @@
                   </div>
           	</div>
           </div>
-          <hr>                        
+          <hr-->                        
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
