@@ -7,12 +7,34 @@ function subscribeResponseHandler(responseText, statusText, xhr, $form) {
     
 }
 
+function displayError(response) {
+    var errorMap = {
+        "number": "card-number",
+        "cvc": "card-cvc",
+        "exp_month": "card-expiry-month",
+        "exp_year": "card-expiry-year"
+    };
+    if (response.error.param) {
+        var par = errorMap[response.error.param];
+        if (par) {
+            $('.' + par)
+                    .parents('.form-group')
+                    .find('.text-danger')
+                    .text(response.error.message).show();
+        } else {
+            //print unknown error    
+        }
+    } else {
+        //print unknown error
+    }
+}
+
 function stripeResponseHandler(status, response) {
 	if (response.error) {
         // re-enable the submit button
         $('.submit-button').removeAttr("disabled");
         // show the errors on the form
-        $(".payment-errors").html(response.error.message);
+        displayError(response);
     } else {
         var form$ = $("#subscribe-form");
         // token contains id, last4, and card type
