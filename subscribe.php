@@ -190,7 +190,7 @@
                             <label for="card_no">Credit Card Number</label>
                             <div class="row">
                             	<div class="col-sm-6">
-                            	<input type="text" class="card-number form-control" name="card_no" required> 
+                            	<input id="card_no" type="text" class="card-number form-control" required> 
                            	</div>
                             <div class="col-sm-6">                      	
                               <span class="cb-cards hidden-xs">                                        
@@ -211,21 +211,20 @@
                               <label for="expiry_month">Card Expiry</label>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-month form-control" name="expiry_month" required>
+                                      <select class="card-expiry-month form-control" id="expiry_month" required>
                                           <option>01</option>
                                           <option>02</option>
                                           <option>13</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-year form-control" name="expiry_year" required>
+                                      <select class="card-expiry-year form-control" id="expiry_year" required>
                                           <option>2015</option>
                                           <option>2223</option>
                                       </select>
                                   </div>
                               </div> 
                               <small for="expiry_month" class="text-danger pull-right"></small>
-                              <small for="expiry_year" class="text-danger pull-right"></small>
                           </div>                                       
                       </div>
                       <div class="col-sm-6">
@@ -233,7 +232,7 @@
                               <label for="ccv">CCV</label>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="card-cvc form-control" name="ccv" placeholder="CCV" required>
+                                      <input type="text" class="card-cvc form-control" id="ccv" placeholder="CCV" required>
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>
