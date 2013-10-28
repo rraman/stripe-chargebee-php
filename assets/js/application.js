@@ -95,7 +95,7 @@ $(document).ready(function() {
              },
              error: function(jqXHR, textStatus, errorThrown)
              {
-                 
+                 $("#discount-form").validate().showErrors({"coupon":"Invalid coupon code."});
              }
          });
          e.preventDefault();
