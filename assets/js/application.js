@@ -5,7 +5,9 @@ jQuery.validator.setDefaults({
 
 // this identifies your website in the createToken call below
 function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
-    
+    var errParam=jqXHR.responseJSON.error_param;
+    var errMsg=jqXHR.responseJSON.error_msg;
+     $("#subscribe-form").validate().showErrors({errParam:errMsg});
 }
 
 function subscribeResponseHandler(responseText, statusText, xhr, $form) {
