@@ -70,14 +70,14 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[first_name]">Name</label>
+                              <label for="customer[first_name]">First Name</label>
                               <input type="text" class="form-control" name="customer[first_name]" required data-msg-required="cannot be blank">
                               <small for="customer[first_name]" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="customer[last_name]">Surname</label>
+                              <label for="customer[last_name]">Last Name</label>
                               <input type="text" class="form-control" name="customer[last_name]" required data-msg-required="cannot be blank">
                               <small for="customer[last_name]" class="text-danger"></small>
                           </div>
@@ -94,7 +94,7 @@
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="customer[phone]">Phone</label>
-                              <input type="text" maxlength="10" class="form-control" name="customer[phone]" required data-msg-required="cannot be blank">
+                              <input id="phone" type="text" maxlength="10" class="form-control" name="customer[phone]" required data-msg-required="cannot be blank">
                               <small for="customer[phone]" class="text-danger"></small>
                           </div>
                       </div>                   
@@ -142,7 +142,7 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="addr">Address1</label>
+                              <label for="addr">Address</label>
                               <input type="text" class="form-control" name="addr" required data-msg-required="cannot be blank">
                               <small for="addr" class="text-danger"></small>
                           </div>
@@ -174,8 +174,8 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="zip_code">Postal/Zip</label>
-                              <input type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
+                              <label for="zip_code">Zip Code</label>
+                              <input id="zip_code" type="text" class="form-control" name="zip_code" required data-msg-required="cannot be blank">
                               <small for="zip_code" class="text-danger"></small>
                           </div>
                       </div>                                                
