@@ -172,14 +172,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Address1</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="addr">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">Address2</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="extended_addr">
                           </div>
                       </div>
                   </div>
@@ -188,14 +188,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">City</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="city">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">State</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="state">
                           </div>
                       </div>
                   </div>
@@ -204,7 +204,7 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Postal/Zip</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="zip_code">
                           </div>
                       </div>                                                
                   </div>
@@ -280,7 +280,7 @@ $(document).ready(function() {
                       </div>
                   </div>     
               <input type="hidden" name="plan" value='<?= $_GET['plan'] ?>'>
-              <input type="hidden" name="coupon">
+              <input type="hidden" name="coupon_id">
               </form>            
               <br><br>
       </div>

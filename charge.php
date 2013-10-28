@@ -11,10 +11,12 @@ if ($_POST) {
             throw new Exception("The Stripe Token was not generated correctly");
         }
         $result = createSub();
+        addAddress($result->subscription(), $result->customer());
         redirect('confirm.php');
     } catch (Exception $e) {
         $error = $e->getMessage();
-        redirect('?error=' . $e->getMessage());
+        echo $error;
+//        redirect('?error=' . $e->getMessage());
     }
 
     if ($error == NULL) {
@@ -43,25 +45,22 @@ require('./footer.php');
 
 function createSub() {
     $stripeToken = $_POST['stripeToken'];
-    $plan = $_POST['plan'];
-    $coupon = $_POST['coupon'];
-    $firstName = $_POST['first_name'];
-    $lastName = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
 
-    $result = ChargeBee_Subscription::create(array(
-                "planId" => $plan,
-                "coupon" => $coupon,
-                "customer" => array(
-                    "email" => $email,
-                    "firstName" => $firstName,
-                    "lastName" => $lastName,
-                    "phone" => $phone
-                ),
-                "card" => array(
-                    "tmp_token" => $stripeToken
-    )));
+    $arr = array(
+        "planId" => $_POST['plan'],
+        "customer" => array(
+            "email" => $_POST['email'],
+            "firstName" => $_POST['first_name'],
+            "lastName" => $_POST['last_name'],
+            "phone" => $_POST['phone']
+        ),
+        "card" => array(
+            "tmp_token" => $stripeToken
+    ));
+    if (isset($_POST['coupon'])) {
+        $arr['coupon'] = $_POST['coupon_id'];
+    }
+    $result = ChargeBee_Subscription::create($arr);
     return $result;
 }
 
@@ -70,13 +69,19 @@ require('./redirect.php');
 
 <?php
 
-function estimateNew($plan, $coupon) {
-    $result = ChargeBee_Estimate::createSubscription(array(
-                "subscription" => array(
-                    "planId" => $plan,
-                    "coupon" => $coupon
-    )));
-    $estimate = $result->estimate();
-    return $result;
+function addAddress($subscription, $customer) {
+    $result = ChargeBee_Address::update(array(
+                "subscriptionId" => $subscription->id,
+                "label" => "shipping_address",
+                "firstName" => $customer->firstName,
+                "lastName" => $customer->lastName,
+                "addr" => $_POST['addr'],
+                "extended_addr" => $_POST['extended_addr'],
+                "city" => $_POST['city'],
+                "state" => $_POST['state'],
+                "zip" => $_POST['zip_code']
+    ));
+    $address = $result->address();
+    return $address;
 }
 ?>
