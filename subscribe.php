@@ -63,7 +63,7 @@
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="page-header">
-                              <h3>Tell about yourself</h3>
+                              <h3>Tell us about yourself</h3>
                           </div>
                       </div>
                   </div>
@@ -102,7 +102,7 @@
                   <div class="row">
                   	<div class="col-sm-12">
                       	<div class="form-group">
-                          	<label for="">Choose Comics Genre</label>
+                          	<label for="">Choosethe genre you would like to receive Comics for</label>
                               <div class="form-control multicheck">
                                   <label class="checkbox-inline col-sm-3 col-xs-12">
                                     	<input type="checkbox" value="option1"> Action

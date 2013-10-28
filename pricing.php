@@ -5,7 +5,7 @@
 	<div class="row">
     	<div class="col-sm-12">      
         	<div class="page-header">
-            	<h3>Choose a plan for your comics</h3>
+            	<h3>Choose a subscription plan</h3>
             </div>
             <div class="well">
                 <div class="row pricing-plan text-center">
@@ -20,14 +20,14 @@
 <img src="assets/images/plan2.gif" alt="">
                         <h3>$7/Month</h3>
                         <h4>6 Months</h4>
-                        <h4>You pay $42.00</h4>
+                        <h4>You will pay $42.00</h4>
                         <h4>You save 15%</h4>
                     </div>
                     <div class="col-sm-4 col-xs-12">
 <img src="assets/images/plan3.gif" alt="">
                         <h3>$6/Month</h3>
                         <h4>1 Year</h4>
-                        <h4>You pay $72</h4>                       
+                        <h4>You will pay $72.00</h4>                       
                         <h4>You save 25%</h4>
                     </div>                
                 </div>            
