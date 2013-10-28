@@ -1,3 +1,8 @@
+jQuery.validator.setDefaults({
+    errorClass  : "text-danger",
+    errorElement: "small"
+});
+
 // this identifies your website in the createToken call below
 function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
     
@@ -37,6 +42,8 @@ function stripeResponseHandler(status, response) {
 }
 
 $(document).ready(function() {
+    $("#subscribe-form").validate();
+    
     $("#subscribe-form").submit(function(event) {
         // disable the submit button to prevent repeated clicks
         $('.submit-button').attr("disabled", "disabled");
