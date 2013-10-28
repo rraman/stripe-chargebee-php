@@ -48,7 +48,6 @@
           </div>
           <hr>                        
           <form action="charge.php" method="post" id="subscribe-form">
-          <form >
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="page-header">
