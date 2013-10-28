@@ -10,6 +10,12 @@
                     </li>                                
                     <li>
                       <a href="subscribe.php">Subscribe</a>
+                    </li>
+                    <li>
+                      <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="#">About Us</a>
                     </li>                    
                   </ul>
                 </div>        

@@ -9,15 +9,18 @@
 <div class="navbar navbar-default navbar-static-top">
   <div class="container text-center">
   	<div style="display:inline-block">                
-      <ul class="nav navbar-nav h4">
-        <li>
-          <a href="#">Comics</a>
-        </li>            
+      <ul class="nav navbar-nav h4">           
         <li>
           <a href="pricing.php">Pricing</a>
         </li>
         <li>
           <a href="subscribe.php">Subscribe</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        <li>
+          <a href="#">About Us</a>
         </li>                    
       </ul>
     </div>        
