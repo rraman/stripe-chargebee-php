@@ -70,32 +70,32 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="first_name">Name</label>
-                              <input type="text" class="form-control" name="first_name" required data-msg-required="cannot be blank">
-                              <small for="first_name" class="text-danger"></small>
+                              <label for="customer[first_name]">Name</label>
+                              <input type="text" class="form-control" name="customer[first_name]" required data-msg-required="cannot be blank">
+                              <small for="customer[first_name]" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="last_name">Surname</label>
-                              <input type="text" class="form-control" name="last_name" required data-msg-required="cannot be blank">
-                              <small for="last_name" class="text-danger"></small>
+                              <label for="customer[last_name]">Surname</label>
+                              <input type="text" class="form-control" name="customer[last_name]" required data-msg-required="cannot be blank">
+                              <small for="customer[last_name]" class="text-danger"></small>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="email">Email</label>
-                              <input id="email" type="text" class="form-control" name="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
-                              <small for="email" class="text-danger"></small>
+                              <label for="customer[email]">Email</label>
+                              <input id="email" type="text" class="form-control" name="customer[email]" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
+                              <small for="customer[email]" class="text-danger"></small>
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="phone">Phone</label>
-                              <input type="text" maxlength="10" class="form-control" name="phone" required data-msg-required="cannot be blank">
-                              <small for="phone" class="text-danger"></small>
+                              <label for="customer[phone]">Phone</label>
+                              <input type="text" maxlength="10" class="form-control" name="customer[phone]" required data-msg-required="cannot be blank">
+                              <small for="customer[phone]" class="text-danger"></small>
                           </div>
                       </div>                   
                   </div>
@@ -193,7 +193,8 @@
                             <label for="card_no">Credit Card Number</label>
                             <div class="row">
                             	<div class="col-sm-6">
-                            	<input type="text" class="card-number form-control" name="card_no" required data-msg-required="cannot be blank"> 
+
+                            	<input type="text" class="card-number form-control" id="card_no" required data-msg-required="cannot be blank"> 
                            	</div>
                             <div class="col-sm-6">                      	
                               <span class="cb-cards hidden-xs">                                        
@@ -214,14 +215,16 @@
                               <label for="expiry_month">Card Expiry</label>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-month form-control" name="expiry_month" required data-msg-required="empty">
+
+                                      <select class="card-expiry-month form-control" id="expiry_month" required data-msg-required="empty">
                                           <option selected>01</option>
                                           <option>02</option>
                                           <option>13</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-year form-control" name="expiry_year" required data-msg-required="empty">
+
+                                      <select class="card-expiry-year form-control" id="expiry_year" required data-msg-required="empty">
                                           <option selected="">2015</option>
                                           <option>2023</option>
                                       </select>
@@ -236,7 +239,7 @@
                               <label for="ccv">CCV</label>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="card-cvc form-control" name="ccv" placeholder="CCV" required data-msg-required="empty">
+                                      <input type="text" class="card-cvc form-control" id="ccv" placeholder="CCV" required data-msg-required="empty">
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>

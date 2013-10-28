@@ -28,10 +28,10 @@ function createSub() {
     $createSubParams = array(
         "planId" => $_POST['plan'],
         "customer" => array(
-            "email" => $_POST['email'],
-            "firstName" => $_POST['first_name'],
-            "lastName" => $_POST['last_name'],
-            "phone" => $_POST['phone']
+            "email" => $_POST['customer[email]'],
+            "firstName" => $_POST['customer[first_name]'],
+            "lastName" => $_POST['customer[last_name]'],
+            "phone" => $_POST['customer[phone]']
         ),
         "card" => array(
             "tmp_token" => $stripeToken
