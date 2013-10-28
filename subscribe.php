@@ -246,7 +246,7 @@
                   <div class="row">
                       <div class="col-sm-12">
                       	<hr>                            
-                          <p><input type="checkbox"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+                          <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
                           <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
                           <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
