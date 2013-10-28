@@ -1,29 +1,5 @@
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+<script src="assets/js/ajaxhandler.js"> </script>
 
-<script>
-     $(document).ready(function() {
-             $('#checkout_form').on('submit', function(e) {
-                 var postData = $(this).serializeArray();
-                 var formURL = $(this).attr("action");
-                 $.ajax({
-                     url: "order_summary.php",
-                     type: "GET",
-                     data: postData,
-                     success: function(data, textStatus, jqXHR)
-                     {
-                         $('#order_summary').html(data);
-                         //$('#checkout_form').html(data);    
-                         
-                     },
-                     error: function(jqXHR, textStatus, errorThrown)
-                     {
-                         alert(textstatus);
-                     }
-                 });
-                 e.preventDefault();
-             });
-         });
-    </script>
 <div class="row">
 	<div class="col-sm-12">
       <div class="page-header"><h3>Order Summary</h3></div>
