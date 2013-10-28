@@ -18,6 +18,12 @@ if ($_POST) {
         $phone = $_POST['phone'];
 
         $result = createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken);
+        header("Location: confirm.php");
+        /* Redirect to a different page in the current directory that was requested */
+//        $host = $_SERVER['HTTP_HOST'];
+//        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+//        $extra = 'mypage.php';
+//        header("Location: http://$host$uri/$extra");
     } catch (Exception $e) {
         $error = $e->getMessage();
     }
