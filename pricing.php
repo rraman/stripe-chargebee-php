@@ -1,18 +1,7 @@
 <?php
   require_once('./topbar.php');
 ?>
-<div class="jumbotron pricing">
-    <div class="container">    	
-        <h3 class="h1">Wondrous Comics)</h3>
-    </div>
-</div>
-<div class="container">
-	<div class="row">
-    	<div class="col-sm-12">      
-        	<div class="page-header">
-            	<h3>Choose a plan for your comics</h3>
-            </div>
-			<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top">
               <div class="container text-center">
                 <div style="display:inline-block">                
                   <ul class="nav navbar-nav h4">
@@ -26,29 +15,36 @@
                 </div>        
               </div>
             </div>
+<div class="container">
+	<div class="row">
+    	<div class="col-sm-12">      
+        	<div class="page-header">
+            	<h3>Choose a plan for your comics</h3>
+            </div>			
             <div class="well">
                 <div class="row pricing-plan text-center">
                     <a href="#" class="col-sm-4 col-xs-12">
                     	<img src="assets/images/plan1.gif" alt="">
-                        <span class="h3">$8/Month</span>
-                        <span class="h4">3 Months</span>
-                        <span class="h4">You pay $5</span>
+                        <div class="h3">$8/Month</div>
+                        <div class="h4">3 Months</div>
+                        <div class="h4">You pay $5</div>
+                        <div class="h4">&nbsp;</div>                        
                     </a>                    
                     <hr class="visible-xs">
                     <a href="#" class="col-sm-4 col-xs-12">
 						<img src="assets/images/plan2.gif" alt="">
-                        <span class="h3">$7/Month</span>
-                        <span class="h4">6 Months</span>
-                        <span class="h4">You pay $42.00</span>
-                        <span class="h4">You save 15%</span>
+                        <div class="h3">$7/Month</div>
+                        <div class="h4">6 Months</div>
+                        <div class="h4">You pay $42.00</div>
+                        <div class="h4">You save 15%</div>
                     </a>
                     <hr class="visible-xs">
                     <a href="#" class="col-sm-4 col-xs-12">
                         <img src="assets/images/plan3.gif" alt="">
-                        <span class="h3">$6/Month</span>
-                        <span class="h4">1 Year</span>
-                        <span class="h4">You pay $72</span>                       
-                        <span class="h4">You save 25%</span>
+                        <div class="h3">$6/Month</div>
+                        <div class="h4">1 Year</div>
+                        <div class="h4">You pay $72</div>                       
+                        <div class="h4">You save 25%</div>
                     </a>                
                 </div>            
             </div>    
