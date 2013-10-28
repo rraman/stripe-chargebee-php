@@ -280,6 +280,7 @@ $(document).ready(function() {
                       </div>
                   </div>     
               <input type="hidden" name="plan" value='<?= $_GET['plan'] ?>'>
+              <input type="hidden" name="coupon">
               </form>            
               <br><br>
       </div>
