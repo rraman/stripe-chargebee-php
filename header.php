@@ -12,10 +12,12 @@
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
     
+    <script type="text/javascript" src="./assets/js/application.js"></script>
+    
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css" rel="stylesheet">
     <link href="./assets/css/style.css" rel="stylesheet">
     <title>Awesome Comics</title>
 
   </head>
   <body>
-  <div id="container">
+  <div id="container" class="container">

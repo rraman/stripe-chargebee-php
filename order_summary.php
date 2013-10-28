@@ -73,7 +73,7 @@
         
         }
         ?>
-        <hr>
+        <hr class="dashed">
         <li class="row">
             <h4>
             	<strong class="col-xs-8 hellip">Order Total</strong>

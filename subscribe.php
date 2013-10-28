@@ -4,44 +4,7 @@
   
   $plan = $_GET['plan'];
 ?>
-
-<script type="text/javascript">
-// this identifies your website in the createToken call below
-Stripe.setPublishableKey("<?php echo $stripeKey; ?>");
-
-function stripeResponseHandler(status, response) {
-	if (response.error) {
-        // re-enable the submit button
-        $('.submit-button').removeAttr("disabled");
-        // show the errors on the form
-        $(".payment-errors").html(response.error.message);
-    } else {
-        var form$ = $("#payment-form");
-        // token contains id, last4, and card type
-        var token = response['id'];
-        // insert the token into the form so it gets submitted to the server
-        form$.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
-                // and submit
-        form$.get(0).submit();
-    }
-}
-
-$(document).ready(function() {
-    $("#payment-form").submit(function(event) {
-        // disable the submit button to prevent repeated clicks
-        $('.submit-button').attr("disabled", "disabled");
-        // createToken returns immediately - the supplied callback submits the form if there are no errors
-        Stripe.createToken({
-            number: $('.card-number').val(),
-            cvc: $('.card-cvc').val(),
-            exp_month: $('.card-expiry-month').val(),
-            exp_year: $('.card-expiry-year').val()
-        }, stripeResponseHandler);
-        return false; // submit from callback
-    });
-});
-</script>
-
+<script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
 <div class="row">	
   	<div class="col-sm-4 col-xs-12 pull-right" id="order_summary">
     	  <?php
@@ -49,7 +12,17 @@ $(document).ready(function() {
           include('order_summary.php');
         }
         ?>
+        <div class="row">
+        	<div class="col-sm-12">
+            	<img src="assets/images/secure.png" alt="secure server">
+                <div class="using">
+                    <h3>Chargebee &amp; Stripe</h3>
+                    <p>30 days payment return</p>
+                </div>
+            </div>
+     	</div>
       </div>
+      <div class="clearfix visible-xs"></div>
       <div class="col-sm-7" id="checkout_info">            
           <div class="row">
           	<div class="col-sm-12">
@@ -62,7 +35,6 @@ $(document).ready(function() {
   Containing 13000+ comic book! - <strong>$5</strong></label>
                           </label>
                       </div>
-                      
                   </div>
                   	<div class="col-xs-12">
                       <div class="checkbox">
@@ -70,13 +42,12 @@ $(document).ready(function() {
                               <input type="checkbox" checked>Be a part of our discussion forums and find out what the world is saying - <strong>$5</strong></label>
                           </label>
                       </div>
-                      
                   </div>
                   </div>
           	</div>
           </div>
           <hr>                        
-          <form>
+          <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="page-header">
@@ -89,14 +60,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Name</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="first_name">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <small class="text-danger pull-right">cannot be blank</small>
                               <label for="">Surname</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="last_name">
                           </div>
                       </div>
                   </div>
@@ -105,14 +76,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Email</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="email">
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">Phone</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="phone">
                           </div>
                       </div>                   
                   </div>
@@ -161,14 +132,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Address1</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="addr">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">Address2</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="extended_addr">
                           </div>
                       </div>
                   </div>
@@ -177,14 +148,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">City</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="city">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">State</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="state">
                           </div>
                       </div>
                   </div>
@@ -193,7 +164,7 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Postal/Zip</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="zip_code">
                           </div>
                       </div>                                                
                   </div>
@@ -209,10 +180,10 @@ $(document).ready(function() {
                       	<div class="form-group">
                               <label for="">Credit Card Number</label>
                               <small class="text-danger pull-right">invalid card number</small>
-                              <input type="text" class="form-control">                                
+                              <input type="text" class="card-number form-control" >                                
                           </div>
                       </div>
-					<div class="col-sm-6">
+                      <div class="col-sm-6">
                       	<div class="form-group">
                           	<label for="">&nbsp;</label>
                               <span class="cb-cards hidden-xs">                                        
@@ -231,13 +202,14 @@ $(document).ready(function() {
                               <small class="text-danger pull-right">invalid card number</small>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="form-control">
-                                          
+                                      <select class="card-expiry-month form-control" >
+                                          <option>01</option>
+                                          <option>02</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="form-control">
-                                          
+                                      <select class="card-expiry-year form-control">
+                                          <option>2015</option>
                                       </select>
                                   </div>
                               </div>                                            
@@ -249,7 +221,7 @@ $(document).ready(function() {
                               <small class="text-danger pull-right">invalid CVV</small>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="form-control" placeholder="CCV">
+                                      <input type="text" class="card-cvc form-control" placeholder="CCV">
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>
@@ -266,9 +238,9 @@ $(document).ready(function() {
                           <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe"></p>
                           <h6 class="process text-danger" style="display:none;">Processing…</h6>                            
                       </div>
-                  </div>                   
-              </form>            
-              <br><br>
+                  </div>     
+                  <input type="hidden" name="plan" value="<?php echo $_GET['plan'] ?>">
+              </form>
       </div>
   </div>
 
