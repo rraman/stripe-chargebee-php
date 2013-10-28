@@ -8,25 +8,34 @@
   $plan = $_GET['plan'];
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
-<div class="row">	
+ <div id="container" class="container">
+<div class="row">		
   	<div class="col-sm-4 col-xs-12 pull-right" id="order_summary">
     	  <?php
     	  if(isset($plan)){
           include('order_summary.php');
         }
         ?>
-        <div class="row">
+        <br><br>
+        <div class="row hidden-xs">
         	<div class="col-sm-12">
-            	<img src="assets/images/secure.png" alt="secure server">
+            	<img src="assets/images/secure.png" alt="secure server"/>
                 <div class="using">
-                    <h3>Chargebee &amp; Stripe</h3>
+                    <h4>Chargebee &amp; Stripe</h4>
                     <p>30 days payment return</p>
                 </div>
             </div>
      	</div>
       </div>
       <div class="clearfix visible-xs"></div>
-      <div class="col-sm-7" id="checkout_info">            
+      <div class="col-sm-7" id="checkout_info">   
+      		<?php /*?><div class="row">
+            	<div class="col-xs-12">
+                    <div class="alert alert-success">
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                    </div>         
+                </div>
+            </div><?php */?>
           <div class="row">
           	<div class="col-sm-12">
                   <div class="page-header"><h3>Hey! There's more!</h3></div>
@@ -34,8 +43,8 @@
                   	<div class="col-xs-12">
                       <div class="checkbox">
                           <label>
-                              <input type="checkbox">Complete access to our digital archives
-  Containing 13000+ comic book! - <strong>$5</strong></label>
+                              <input type="checkbox">
+                              Complete access to our digital archives Containing 13000+ comic book! - <strong>$5</strong></label>
                           </label>
                       </div>
                   </div>
@@ -61,32 +70,32 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Name</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="first_name">
+                              <label for="first_name">Name</label>
+                              <input type="text" class="form-control" name="first_name" required data-msg-required="cannot be blank">
+                              <small for="first_name" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <label for="">Surname</label>
-                              <input type="text" class="form-control" name="last_name">
+                              <label for="last_name">Surname</label>
+                              <input type="text" class="form-control" name="last_name" required>
+                              <small for="last_name" class="text-danger"></small>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Email</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="email">
+                              <label for="email">Email</label>
+                              <input id="email" type="text" class="form-control" name="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address">
+                              <small for="email" class="text-danger"></small>
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Phone</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="phone">
+                              <label for="phone">Phone</label>
+                              <input type="text" maxlength="10" class="form-control" name="phone" required>
+                              <small for="phone" class="text-danger"></small>
                           </div>
                       </div>                   
                   </div>
@@ -133,62 +142,60 @@
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Address1</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="addr">
+                              <label for="addr">Address1</label>
+                              <input type="text" class="form-control" name="addr" required>
+                              <small for="addr" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Address2</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
+                              <label for="extended_addr">Address2</label>
                               <input type="text" class="form-control" name="extended_addr">
+                              <small for="extended_addr" class="text-danger"></small>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">City</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="city">
+                              <label for="city">City</label>
+                              <input type="text" class="form-control" name="city" required>
+                              <small for="city" class="text-danger"></small>
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">State</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="state">
+                              <label for="state">State</label>
+                              <input type="text" class="form-control" name="state" required>
+                              <small for="state" class="text-danger"></small>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">Postal/Zip</label>
-                              <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control" name="zip_code">
+                              <label for="zip_code">Postal/Zip</label>
+                              <input type="text" class="form-control" name="zip_code" required>
+                              <small for="zip_code" class="text-danger"></small>
                           </div>
                       </div>                                                
                   </div>
 				<div class="row">
-                      <div class="col-sm-12">
-                          <div class="page-header">
-                              <h3>Payment Information</h3>
-                          </div>
-                      </div>
-                  </div>                  
-                  <div class="row">
-                      <div class="col-sm-6">
-                      	<div class="form-group">
-                              <label for="">Credit Card Number</label>
-                              <small class="text-danger pull-right">invalid card number</small>
-                              <input type="text" class="card-number form-control" >                                
-                          </div>
-                      </div>
-                      <div class="col-sm-6">
-                      	<div class="form-group">
-                          	<label for="">&nbsp;</label>
+                    <div class="col-sm-12">
+                        <div class="page-header">
+                        	<h3>Payment Information</h3>
+                        </div>
+                    </div>
+                </div>                  
+                <div class="row">                 	  
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="card_no">Credit Card Number</label>
+                            <div class="row">
+                            	<div class="col-sm-6">
+                            	<input type="text" class="card-number form-control" name="card_no" required> 
+                           	</div>
+                            <div class="col-sm-6">                      	
                               <span class="cb-cards hidden-xs">                                        
                                   <span class="visa">  </span>                                        
                                   <span class="mastercard">  </span>                                        
@@ -196,40 +203,46 @@
                                   <span class="discover">  </span>
                               </span> 
                        	</div>
-                 		</div>                                       
-                  </div>
+                 		</div>
+                            <small for="card_no" class="text-danger"></small>
+                        </div>
+                    </div>                                                             
+                </div>
                   <div class="row">                
                       <div class="col-sm-6">                                	
                           <div class="form-group">
-                              <label for="">Card Expiry</label>
-                              <small class="text-danger pull-right">invalid card number</small>
+                              <label for="expiry_month">Card Expiry</label>
                               <div class="row">
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-month form-control" >
+                                      <select class="card-expiry-month form-control" name="expiry_month" required>
                                           <option>01</option>
                                           <option>02</option>
+                                          <option>13</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
-                                      <select class="card-expiry-year form-control">
+                                      <select class="card-expiry-year form-control" name="expiry_year" required>
                                           <option>2015</option>
+                                          <option>2223</option>
                                       </select>
                                   </div>
-                              </div>                                            
+                              </div> 
+                              <small for="expiry_month" class="text-danger pull-right"></small>
+                              <small for="expiry_year" class="text-danger pull-right"></small>
                           </div>                                       
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
-                              <label for="">CCV</label>
-                              <small class="text-danger pull-right">invalid CVV</small>
+                              <label for="ccv">CCV</label>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="card-cvc form-control" placeholder="CCV">
+                                      <input type="text" class="card-cvc form-control" name="ccv" placeholder="CCV" required>
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>
                                   </div>
                               </div>
+                              <small for="ccv" class="text-danger pull-right"></small>
                           </div>
                       </div>                                      
                   </div>                      
@@ -246,7 +259,7 @@
               </form>
       </div>
   </div>
-
+</div>
 <?php
   require_once('./footer.php');
 ?>

@@ -3,7 +3,7 @@ body{
 }
 @font-face{
 	font-family: comic;
-	src: url('../../assets/fonts/Fat Tats.ttf');     	 
+	src: url('../fonts/Fat Tats.ttf');     	 
 }
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	font-family:inherit;
@@ -14,21 +14,18 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 .jumbotron{	
 	margin-bottom:0;
 	border-bottom:1px solid grey;
-	background:url(../../assets/images/7.jpg) no-repeat top left;
+	background:url(../images/banner-bg.gif) no-repeat top right;
 	color:#fff;
 }
-h1{
+.jumbotron h1{
 	font-family:comic;
+	color:#000;
 }
 h1 small{
 	font-family:segoe ui,helvetica neue,sans-serif;
 }
 .list-group-item-heading{
 	font-weight:bold;
-}
-.pricing-plan li{
-	border-bottom:1px solid #ddd;
-	vertical-align:baseline;
 }
 .text-center{
 	line-height:30px;
@@ -61,9 +58,7 @@ h1 small{
 	color: #ffffff;
 	margin:0 10px;
 }
-.form-group > .text-danger{
-	display:none;
-}
+
 .form-control,
 .input-group-addon,
 .btn{
@@ -77,7 +72,6 @@ li{
 }
 .description img{
 	max-height:220px;
-	width:100%;
 	margin-bottom:12px;
 }
 .hellip1{
@@ -101,7 +95,7 @@ li{
 	width:131px;
 }
 .cb-cards>span{	
-	background: url(../../assets/images/cb-sprite.png) no-repeat;
+	background: url(../images/cb-sprite.png) no-repeat;
 	width: 30px;
 	height: 20px;
 	float: left;
@@ -124,7 +118,7 @@ cb-cards>span.visa {
 	background-position: -36px 0;
 }
 .cb-cvv{
-	background: url(../../assets/images/cb-sprite.png) no-repeat 0 -27px;
+	background: url(../images/cb-sprite.png) no-repeat 0 -27px;
 	white-space: nowrap;
 	height: 18px;
 	display: inline-block;
@@ -133,10 +127,18 @@ cb-cards>span.visa {
 }
 .process{
 	padding-left:20px;
-	background:url(../../assets/images/cb-loading.gif) no-repeat;
+	background:url(../images/cb-loading.gif) no-repeat;
 	line-height:17px;
 }
 label.success{
 	padding-right:22px;
-	background: url(../../assets/images/cb-success.gif) no-repeat right center;	
+	background: url(../images/cb-success.gif) no-repeat right center;	
+}
+@media (min-width:768px){
+.pricing-plan>div{
+	border-right:1px solid #ddd;	
+}
+.pricing-plan>div:last-child{
+	border:none;
+}
 }
