@@ -21,6 +21,21 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	font-family:comic;
 	color:#000;
 }
+.well{
+	padding:0;
+}
+.well .pricing-plan a,
+.jumbotron.pricing{
+	padding-bottom:20px;
+	padding-top:20px;
+	color:#000;
+}
+.well .pricing-plan a:hover{
+	text-decoration:none;
+}
+.well .pricing-plan a > div{
+	margin:12px 0;
+}
 h1 small{
 	font-family:segoe ui,helvetica neue,sans-serif;
 }
@@ -135,10 +150,10 @@ label.success{
 	background: url(../images/cb-success.gif) no-repeat right center;	
 }
 @media (min-width:768px){
-.pricing-plan>div{
+.pricing-plan>a{
 	border-right:1px solid #ddd;	
 }
-.pricing-plan>div:last-child{
+.pricing-plan>a:last-child{
 	border:none;
 }
 }

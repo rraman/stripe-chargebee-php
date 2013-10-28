@@ -14,14 +14,11 @@
           <a href="#">Comics</a>
         </li>            
         <li>
-          <a href="#">Pricing</a>
+          <a href="pricing.php">Pricing</a>
         </li>
         <li>
-          <a href="#">Subscribe</a>
-        </li>
-        <li>
-          <a href="#">Login</a>
-        </li>             
+          <a href="subscribe.php">Subscribe</a>
+        </li>                    
       </ul>
     </div>        
   </div>
