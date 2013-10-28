@@ -46,7 +46,7 @@ require('./footer.php');
 function createSub() {
     $stripeToken = $_POST['stripeToken'];
 
-    $arr = array(
+    $createSubParams = array(
         "planId" => $_POST['plan'],
         "customer" => array(
             "email" => $_POST['email'],
@@ -57,10 +57,10 @@ function createSub() {
         "card" => array(
             "tmp_token" => $stripeToken
     ));
-    if (isset($_POST['coupon'])) {
-        $arr['coupon'] = $_POST['coupon_id'];
+    if (isset($_POST['coupon_id'])) {
+        $createSubParams['coupon'] = $_POST['coupon_id'];
     }
-    $result = ChargeBee_Subscription::create($arr);
+    $result = ChargeBee_Subscription::create($createSubParams);
     return $result;
 }
 
