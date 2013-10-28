@@ -16,7 +16,7 @@ function stripeResponseHandler(status, response) {
         // show the errors on the form
         $(".payment-errors").html(response.error.message);
     } else {
-        var form$ = $("#payment-form");
+        var form$ = $("#subscribe-form");
         // token contains id, last4, and card type
         var token = response['id'];
         // insert the token into the form so it gets submitted to the server
@@ -27,7 +27,7 @@ function stripeResponseHandler(status, response) {
 }
 
 $(document).ready(function() {
-    $("#payment-form").submit(function(event) {
+    $("#subscribe-form").submit(function(event) {
         // disable the submit button to prevent repeated clicks
         $('.submit-button').attr("disabled", "disabled");
         // createToken returns immediately - the supplied callback submits the form if there are no errors
@@ -76,7 +76,8 @@ $(document).ready(function() {
           	</div>
           </div>
           <hr>                        
-          <form>
+          <form action="charge.php" method="post" id="subscribe-form">
+          <form >
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="page-header">
@@ -89,14 +90,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Name</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="first_name">
                           </div>
                       </div>
                       <div class="col-sm-6">
                           <div class="form-group">
                               <small class="text-danger pull-right">cannot be blank</small>
                               <label for="">Surname</label>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="last_name">
                           </div>
                       </div>
                   </div>
@@ -105,14 +106,14 @@ $(document).ready(function() {
                           <div class="form-group">
                               <label for="">Email</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="email">
                           </div>
                       </div> 
                       <div class="col-sm-6">
                           <div class="form-group">
                               <label for="">Phone</label>
                               <small class="text-danger pull-right">cannot be blank</small>
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="phone">
                           </div>
                       </div>                   
                   </div>
@@ -209,10 +210,10 @@ $(document).ready(function() {
                       	<div class="form-group">
                               <label for="">Credit Card Number</label>
                               <small class="text-danger pull-right">invalid card number</small>
-                              <input type="text" class="form-control">                                
+                              <input type="text" class="card-number form-control" >                                
                           </div>
                       </div>
-					<div class="col-sm-6">
+                      <div class="col-sm-6">
                       	<div class="form-group">
                           	<label for="">&nbsp;</label>
                               <span class="cb-cards hidden-xs">                                        
@@ -232,12 +233,13 @@ $(document).ready(function() {
                               <div class="row">
                                   <div class="col-xs-6">
                                       <select class="form-control">
-                                          
+                                          <option>01</option>
+                                          <option>02</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
                                       <select class="form-control">
-                                          
+                                          <option>2015</option>
                                       </select>
                                   </div>
                               </div>                                            
@@ -249,7 +251,7 @@ $(document).ready(function() {
                               <small class="text-danger pull-right">invalid CVV</small>
                               <div class="row">                                    	
                                   <div class="col-xs-6">                                            
-                                      <input type="text" class="form-control" placeholder="CCV">
+                                      <input type="text" class="card-cvc form-control" placeholder="CCV">
                                   </div>
                                   <div class="col-xs-6">                                            	
                                       <h6 class="cb-cvv"><small>(Last 3-4 digits)</small></h6>

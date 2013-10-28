@@ -10,15 +10,9 @@ if ($_POST) {
         if (!isset($_POST['stripeToken'])) {
             throw new Exception("The Stripe Token was not generated correctly");
         }
-        $stripeToken = $_POST['stripeToken'];
-//        $plan = $_POST['plan_id'];
-        $email = $_POST['email'];
-//        $firstName = $_POST['first_name'];
-//        $lastName = $_POST['last_name'];
-//        $result = createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken);
-        $result = createSub($email, $stripeToken);
-//        print_r($result);
-        redirect('confirm.php');
+        $result = createSub();
+        print_r($result);
+//        redirect('confirm.php');
     } catch (Exception $e) {
         $error = $e->getMessage();
         echo $error;
@@ -39,7 +33,7 @@ if ($_POST) {
         echo "<h1>Here's your quote!</h1>";
         echo "<h2>" . $wildeQuotes[array_rand($wildeQuotes)] . "</h2>";
     } else {
-        require_once('./payment_form.php');
+        require_once('.600096/payment_form.php');
         echo "<script type=\"text/javascript\">$(\".payment-errors\").html(\"$error\");</script>";
     }
 }
@@ -48,14 +42,21 @@ require('./footer.php');
 
 <?php
 
-//function createSub($plan, $email, $firstName, $lastName, $phone, $stripeToken) {
-function createSub($email, $stripeToken) {
+function createSub() {
+    $stripeToken = $_POST['stripeToken'];
+    $plan = $_POST['plan_id'];
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+
     $result = ChargeBee_Subscription::create(array(
-                "planId" => 'basic',
+                "planId" => $plan,
                 "customer" => array(
                     "email" => $email,
-                    "firstName" => 'john',
-                    "lastName" => 'cruze'
+                    "firstName" => $firstName,
+                    "lastName" => $lastName,
+                    "phone" => $phone
                 ),
                 "card" => array(
                     "tmp_token" => $stripeToken
@@ -63,9 +64,18 @@ function createSub($email, $stripeToken) {
     return $result;
 }
 
-function redirect($path) {
-    $host = $_SERVER['HTTP_HOST'];
-    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    header("Location: http://$host$uri/$path");
+require('./redirect.php');
+?>
+
+<?php
+
+function estimateNew($plan, $coupon) {
+    $result = ChargeBee_Estimate::createSubscription(array(
+                "subscription" => array(
+                    "planId" => $plan,
+                    "coupon" => $coupon
+    )));
+    $estimate = $result->estimate();
+    return $result;
 }
 ?>
