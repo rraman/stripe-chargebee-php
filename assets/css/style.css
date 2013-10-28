@@ -1,0 +1,118 @@
+body{	
+	font-family:segoe ui,helvetica neue,sans-serif;
+}
+@font-face{
+	font-family: comic;
+	src: url('../../assets/fonts/Fat Tats.ttf');     	 
+}
+h1,h2,h3,h4,h5,h6{
+	font-family:inherit;
+}
+.jumbotron{	
+	color:#fff;
+	margin-bottom:0;
+	border-bottom:1px solid grey;
+	background:url(../../assets/images/7.jpg) no-repeat top left;
+}
+.jumbotron h1{
+	font-family:comic;
+	text-shadow: 0 2px 2px #ddd;
+}
+.img-responsive{
+	margin:auto;
+}
+.bgMixing1{
+	background: linear-gradient(20deg,#49546F 30%,#3A6D85 87%,#435e67 100%);
+	background-attachment: fixed;
+	background-color: #1c2533;
+}
+.bgMixing2{
+	background: linear-gradient(20deg,#3C455A 30%,#305C70 87%,#293B41 100%);
+	background-attachment: fixed;
+	background-color: #1F2836;
+}
+.navbar-default {
+	/*background-color: #3E5770;
+	border-color: #2C3C4E;*/
+	background:#000;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
+	color: #ffffff;
+}
+.form-group > .text-danger{
+	display:none;
+}
+.form-control,
+.input-group-addon,
+.btn{
+	border-radius:0;
+}
+ul hr{
+	margin:7px inherit;	
+}
+li{
+	line-height:28px;
+}
+.description img{
+	max-height:220px;
+	width:100%;
+	margin-bottom:12px;
+}
+.hellip{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.page-header {
+	padding-bottom: 0;
+	margin: 20px 0 10px;
+}
+.multicheck{
+	min-height:90px;
+	overflow-y:scroll;
+}
+.multicheck .checkbox-inline{
+	margin:2px 0 2px 10px;
+}
+.cb-cards{
+	display:block;
+	width:131px;
+}
+.cb-cards>span{	
+	background: url(../../assets/images/cb-sprite.png) no-repeat;
+	width: 30px;
+	height: 20px;
+	float: left;
+	margin: 0 2% 0 0;
+	margin-top:7px;
+}
+cb-cards>span.visa {
+	background-position: -108px 0;
+}
+.cb-cards>span.mastercard {
+	background-position: -72px 0;
+}
+.cb-cards>span.american_express {
+	background-position: 0 0;
+}
+.cb-cards>span.discover {
+	background-position: -36px 0;
+}
+.cb-cvv{
+	background: url(../../assets/images/cb-sprite.png) no-repeat 0 -27px;
+	white-space: nowrap;
+	height: 18px;
+	display: inline-block;
+	padding-left: 35px;	
+	line-height: 30px;
+}
+.process{
+	padding-left:20px;
+	background:url(../../assets/images/cb-loading.gif) no-repeat;
+	line-height:17px;
+}
+label.success{
+	padding-right:22px;
+	background: url(../../assets/images/cb-success.gif) no-repeat right center;	
+}
