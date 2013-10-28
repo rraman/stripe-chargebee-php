@@ -5,14 +5,17 @@ jQuery.validator.setDefaults({
 
 // this identifies your website in the createToken call below
 function subscribeErrorHandler(jqXHR, textStatus, errorThrown) {
-    // var resp = JSON.parse(jqXHR.responseText);
-    //     var errParam = jqXHR.responseJSON.error_param;
-    //     var errMsg=jqXHR.responseJSON.error_msg;
-    //      $("#subscribe-form").validate().showErrors({errParam:errMsg});
+    var resp = JSON.parse(jqXHR.responseText);
+    if('error_param' in resp) {
+        var errParam = jqXHR.responseJSON.error_param;
+        $("#subscribe-form").validate().showErrors({errParam:errMsg});
+    }
+    var errMsg = jqXHR.responseJSON.error_msg;
+    $(".alert-danger").text(errMsg).show();
 }
 
-function subscribeResponseHandler(jqXHR) {
-    window.location.replace("thankyou.php");
+function subscribeResponseHandler(responseJSON) {
+    window.location.replace(responseJSON.forward);
 }
 
 function stripeErrorDisplayHandler(response) {
@@ -55,7 +58,7 @@ function stripeResponseHandler(status, response) {
                 // and submit
         //form$.get(0).submit();
         var options = {
-                error:       subscribeResponseHandler,  // post-submit callback 
+                error:       subscribeErrorHandler,  // post-submit callback 
                 success:     subscribeResponseHandler,  // post-submit callback 
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 dataType:    'json'

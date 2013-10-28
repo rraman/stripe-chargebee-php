@@ -9,6 +9,11 @@
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
  <div id="container" class="container">
+   	<div class="row">
+     	<div class="col-xs-12">
+             <div class="alert alert-danger" style="display:none;"></div>
+         </div>
+     </div>
 <div class="row">		
   	<div class="col-sm-4 col-xs-12 pull-right" id="order_summary">
     	  <?php
@@ -33,14 +38,7 @@
      	</div>
       </div>
       <div class="clearfix visible-xs"></div>
-      <div class="col-sm-7" id="checkout_info">   
-      		<?php /*?><div class="row">
-            	<div class="col-xs-12">
-                    <div class="alert alert-success">
-                        <strong>Well done!</strong> You successfully read this important alert message.
-                    </div>         
-                </div>
-            </div><?php */?>
+      <div class="col-sm-7" id="checkout_info">
           <!--div class="row">
           	<div class="col-sm-12">
                   <div class="page-header"><h3>Hey! There's more!</h3></div>

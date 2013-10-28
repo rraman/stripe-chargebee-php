@@ -11,7 +11,9 @@ if ($_POST) {
         }
         $result = createSub();
         addAddress($result->subscription(), $result->customer());
-        echo "{'forward': 'thankyou.php'}";
+        $jsonResp = array();
+        $jsonResp["forward"] = 'thankyou.php';
+        echo json_encode($jsonResp, true);
     } catch (ChargeBee_APIError $e) {
         $jsonError = $e->getJsonObject();
         header("HTTP/1.0 400 Error");
