@@ -88,6 +88,9 @@ $(document).ready(function() {
              url: "order_summary.php",
              type: "GET",
              data: postData,
+	     beforeSend: function(data, textStatus, jqXHR) {
+		$('.coupon_process').show();	
+	     },
              success: function(data, textStatus, jqXHR)
              {
                  var cpnFld = $("#subscribe-form").find("input[name='coupon']");
@@ -102,7 +105,11 @@ $(document).ready(function() {
              error: function(jqXHR, textStatus, errorThrown)
              {
                  $("#discount-form").validate().showErrors({"coupon":"Invalid coupon code."});
-             }
+             },
+	     complete: function(data, textStatus, jqXHR) {
+		$('.coupon_process').hide();
+	     }
+
          });
          e.preventDefault();
      });
