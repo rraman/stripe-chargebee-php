@@ -41,6 +41,7 @@
      	</div>
       </div>
       <div class="clearfix visible-xs"></div>
+
       <div class="col-sm-7" id="checkout_info">
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
@@ -85,7 +86,7 @@
                   <div class="row">
                   	<div class="col-sm-12">
                       	<div class="form-group">
-                          	<label for="">Choosethe genre you would like to receive Comics for</label>
+                          	<label for="">Choose the genre you would like to receive Comics for</label>
                               <div class="form-control multicheck">
                                   <label class="checkbox-inline col-sm-3 col-xs-12">
                                     	<input type="checkbox" value="option1"> Action
@@ -202,13 +203,31 @@
                                       <select class="card-expiry-month form-control" id="expiry_month" required data-msg-required="empty">
                                           <option selected>01</option>
                                           <option>02</option>
-                                          <option>13</option>
+                                          <option>03</option>
+                                          <option>04</option>
+                                          <option>05</option>
+                                          <option>06</option>
+                                          <option>07</option>
+                                          <option>08</option>
+                                          <option>09</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
                                       </select>
                                   </div>
                                   <div class="col-xs-6">
 
                                       <select class="card-expiry-year form-control" id="expiry_year" required data-msg-required="empty">
-                                          <option selected="">2015</option>
+                                          <option selected="">2013</option>
+                                          <option>2014</option>
+                                          <option>2015</option>
+                                          <option>2016</option>
+                                          <option>2017</option>
+                                          <option>2018</option>
+                                          <option>2019</option>
+                                          <option>2020</option>
+                                          <option>2021</option>
+                                          <option>2022</option>
                                           <option>2023</option>
                                       </select>
                                   </div>
