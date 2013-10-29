@@ -218,14 +218,14 @@
                                   <div class="col-xs-6">
 
                                       <select class="card-expiry-year form-control" id="expiry_year" required data-msg-required="empty">
-                                          <option selected="">2013</option>
+                                          <option>2013</option>
                                           <option>2014</option>
                                           <option>2015</option>
                                           <option>2016</option>
                                           <option>2017</option>
                                           <option>2018</option>
                                           <option>2019</option>
-                                          <option>2020</option>
+                                          <option selected="">2020</option>
                                           <option>2021</option>
                                           <option>2022</option>
                                           <option>2023</option>
@@ -256,7 +256,7 @@
                       	<hr>                            
                           <p>By clicking Subscribe, you agree to our privacy policy and terms of service.</p>
                           <p><small class="text-danger" style="display:none;">There were errors while submitting</small></p>
-                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe">&nbsp;&nbsp;&nbsp;&nbsp;<span class="process" style="display:none;">Processing&hellip;</span></p><br><br>                          
+                          <p><input type="submit" class="btn btn-primary btn-lg" value="Subscribe">&nbsp;&nbsp;&nbsp;&nbsp;<span class="subscribe_process process" style="display:none;">Processing&hellip;</span></p><br><br>                          
                       </div>
                   </div>     
                   <input type="hidden" name="plan" value="<?php echo $_GET['plan'] ?>">
