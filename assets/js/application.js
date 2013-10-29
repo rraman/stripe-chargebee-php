@@ -55,10 +55,12 @@ function stripeResponseHandler(status, response) {
                 // and submit
         //form$.get(0).submit();
         var options = {
-                error:       subscribeResponseHandler,  // post-submit callback 
-                success:     subscribeResponseHandler,  // post-submit callback 
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                dataType:    'json'
+                beforeSend:     function() {  $('.subscribe_process').show(); },
+                error:          subscribeResponseHandler,  // post-submit callback 
+                success:        subscribeResponseHandler,  // post-submit callback 
+                complete:       $('.subscribe_process').hide(),
+                contentType:    'application/x-www-form-urlencoded; charset=UTF-8',
+                dataType:       'json'
         };
         form$.ajaxSubmit(options);
         return false;

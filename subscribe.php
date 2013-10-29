@@ -209,14 +209,14 @@
                                   <div class="col-xs-6">
 
                                       <select class="card-expiry-year form-control" id="expiry_year" required data-msg-required="empty">
-                                          <option selected="">2013</option>
+                                          <option>2013</option>
                                           <option>2014</option>
                                           <option>2015</option>
                                           <option>2016</option>
                                           <option>2017</option>
                                           <option>2018</option>
                                           <option>2019</option>
-                                          <option>2020</option>
+                                          <option selected="">2020</option>
                                           <option>2021</option>
                                           <option>2022</option>
                                           <option>2023</option>
