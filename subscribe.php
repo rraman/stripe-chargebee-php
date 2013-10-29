@@ -5,6 +5,7 @@
   if (!isset($_GET['plan'])){
       redirect('pricing.php');
   }
+  //Retrive the selected plan from the link
   $plan = $_GET['plan'];
 ?>
 <script>Stripe.setPublishableKey("<?php echo $stripeKey; ?>");</script>
@@ -34,13 +35,7 @@
       </div>
       <div class="clearfix visible-xs"></div>
       <div class="col-sm-7" id="checkout_info">   
-      		<?php /*?><div class="row">
-            	<div class="col-xs-12">
-                    <div class="alert alert-success">
-                        <strong>Well done!</strong> You successfully read this important alert message.
-                    </div>         
-                </div>
-            </div><?php */?>                              
+      	<!-- Add the needed fields in the form-->	                            
           <form action="charge.php" method="post" id="subscribe-form">
                   <div class="row">
                       <div class="col-sm-12">

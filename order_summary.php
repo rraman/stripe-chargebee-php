@@ -12,20 +12,23 @@
 <?php
   require_once('./config.php');
   require_once('./util.php');
-
+  //Get plan Id 
   $plan = $_GET['plan'];
   //$addons = params("addons", explode('&', $_SERVER['QUERY_STRING']))
 
   if ($_GET) {
     $error = NULL;
     try {
+        //Set All the requierd values for creating the chargebee subscription in an array
         $subParams = array("planId" => $plan);
         if(isset($_GET['coupon']))
         {  
           $subParams["coupon"] = $_GET['coupon'];
         } 
+        //Request for estimation of cost if the subscription is created with that select plan, coupon, etc to show it to the
         $result = ChargeBee_Estimate::createSubscription(array("subscription" => $subParams));
         $estimate = $result->estimate();
+        //Display the estimate result
         foreach($estimate->lineItems as $li)
         {
           ?>
