@@ -55,10 +55,12 @@ function stripeResponseHandler(status, response) {
                 // and submit
         //form$.get(0).submit();
         var options = {
-                error:       subscribeResponseHandler,  // post-submit callback 
-                success:     subscribeResponseHandler,  // post-submit callback 
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                dataType:    'json'
+                beforeSend:     function() {  $('.subscribe_process').show(); },
+                error:          subscribeResponseHandler,  // post-submit callback 
+                success:        subscribeResponseHandler,  // post-submit callback 
+                complete:       $('.subscribe_process').hide(),
+                contentType:    'application/x-www-form-urlencoded; charset=UTF-8',
+                dataType:       'json'
         };
         form$.ajaxSubmit(options);
         return false;
@@ -88,6 +90,9 @@ $(document).ready(function() {
              url: "order_summary.php",
              type: "GET",
              data: postData,
+	     beforeSend: function(data, textStatus, jqXHR) {
+		$('.coupon_process').show();	
+	     },
              success: function(data, textStatus, jqXHR)
              {
                  var cpnFld = $("#subscribe-form").find("input[name='coupon']");
@@ -102,7 +107,11 @@ $(document).ready(function() {
              error: function(jqXHR, textStatus, errorThrown)
              {
                  $("#discount-form").validate().showErrors({"coupon":"Invalid coupon code."});
-             }
+             },
+	     complete: function(data, textStatus, jqXHR) {
+		$('.coupon_process').hide();
+	     }
+
          });
          e.preventDefault();
      });
